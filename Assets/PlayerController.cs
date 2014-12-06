@@ -6,8 +6,8 @@ public class PlayerController : MonoBehaviour
 
 	public enum PlayerState
 	{
-		OnWall,
-		OnFloor,
+		Walking,
+		Jumping,
 		Floating
 	}
 
@@ -20,7 +20,17 @@ public class PlayerController : MonoBehaviour
 		OnCeiling
 	}
 
-	public PlayerState State;
+	public PlayerState _state;
+	public PlayerState State
+	{
+		get { return _state; }
+		set 
+		{
+			Debug.Log(value);
+			_state = value; 
+		}
+	}
+
 	public PlayerOrientation Orientation;
 
 	public float WallStickRadius = 1.0f;
@@ -37,7 +47,27 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
-		SetPlayerOrientation(GetPlayerOrientation());
+
+		if (State == PlayerState.Walking)
+		{
+			if (GetPlayerOrientation() == PlayerOrientation.Floating)
+			{
+				// Walked off edge probably..
+				State = PlayerState.Floating;
+			}
+
+		}
+
+		if (State == PlayerState.Floating)
+		{
+			SetPlayerOrientation(GetPlayerOrientation());
+		}
+
+		if (State == PlayerState.Jumping)
+		{
+			if (GetPlayerOrientation() == PlayerOrientation.Floating)
+			State = PlayerState.Floating;
+		}
 
 		transform.position = new Vector2(transform.position.x, transform.position.y) + Velocity * Time.deltaTime;
 
@@ -47,9 +77,10 @@ public class PlayerController : MonoBehaviour
 	PlayerOrientation GetPlayerOrientation()
 	{
 		// Check if we should stick to a wall
-		Collider2D collider = Physics2D.OverlapCircle(transform.position, WallStickRadius);
+		Collider2D collider = Physics2D.OverlapCircle(transform.position, WallStickRadius, LayerMask.GetMask("Wall"));
 		if (collider != null)
 		{
+			Debug.Log(collider);
 			WallComponent wall = collider.GetComponent<WallComponent>();
 			if (wall != null)
 			{
@@ -102,6 +133,7 @@ public class PlayerController : MonoBehaviour
 		if (Orientation == PlayerOrientation.Floating && o != PlayerOrientation.Floating)
 		{
 			Velocity = Vector2.zero;
+			State = PlayerState.Walking;
 		}
 
 		Orientation = o;
@@ -172,46 +204,50 @@ public class PlayerController : MonoBehaviour
 
 	void QueryInput()
 	{
-		if (OnVerticalSurface())
+		if (State == PlayerState.Walking)
 		{
-			if (Input.GetKey(KeyCode.W))
+			if (OnVerticalSurface())
 			{
-				// move up if on wall
-				Velocity = Vector2.up * WalkSpeed;
+				if (Input.GetKey(KeyCode.W))
+				{
+					// move up if on wall
+					Velocity = Vector2.up * WalkSpeed;
+				}
+				else if (Input.GetKey(KeyCode.S))
+				{
+					// move down if on wall
+					Velocity = -Vector2.up * WalkSpeed;
+				}
+				else
+				{
+					Velocity = Vector2.zero;
+				}
 			}
-			else if (Input.GetKey(KeyCode.S))
-			{
-				// move down if on wall
-				Velocity = -Vector2.up * WalkSpeed;
-			}
-			else
-			{
-				Velocity = Vector2.zero;
-			}
-		}
 
-		if (OnHorizontalSurface())
-		{
-			if (Input.GetKey(KeyCode.A))
+			if (OnHorizontalSurface())
 			{
-				// move left if on floor / ceiling
-				Velocity = -Vector2.right * WalkSpeed;
+				if (Input.GetKey(KeyCode.A))
+				{
+					// move left if on floor / ceiling
+					Velocity = -Vector2.right * WalkSpeed;
+				}
+				else if (Input.GetKey(KeyCode.D))
+				{
+					// move right if on floor / ceiling
+					Velocity = Vector2.right * WalkSpeed;
+				}
+				else
+				{
+					Velocity = Vector2.zero;
+				}
 			}
-			else if (Input.GetKey(KeyCode.D))
-			{
-				// move right if on floor / ceiling
-				Velocity = Vector2.right * WalkSpeed;
-			}
-			else
-			{
-				Velocity = Vector2.zero;
-			}
-		}
 
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			Vector2 jumpDirection = GetJumpDirection();
-			Velocity = jumpDirection * JumpSpeed;
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+				Vector2 jumpDirection = GetJumpDirection();
+				Velocity = jumpDirection * JumpSpeed;
+				State = PlayerState.Jumping;
+			}
 		}
 	}
 }
