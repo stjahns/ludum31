@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 400000}
   - 58: {fileID: 5800000}
   - 114: {fileID: 11400000}
-  - 95: {fileID: 9500000}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -27,6 +26,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200000}
+  - 95: {fileID: 9500000}
   m_Layer: 8
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -76,10 +76,10 @@ Animator:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
+  m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f4b397b33e492946afed416c13dcb40, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -101,7 +101,7 @@ MonoBehaviour:
   WallStickRadius: .5
   Velocity: {x: 0, y: 0}
   WalkSpeed: 5
-  JumpSpeed: 3
+  JumpSpeed: 5
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
