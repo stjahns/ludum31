@@ -4,10 +4,6 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
 
-	//private bool _onCeiling = false;
-	//public bool OnCeiling
-	//public bool OnWall
-
 	public enum PlayerState
 	{
 		OnWall,
@@ -33,17 +29,12 @@ public class PlayerController : MonoBehaviour
 	public float WalkSpeed = 1.0f;
 	public float JumpSpeed = 1.0f;
 
-	// TODO - to avoid aliasy bits - maybe have a 'RealPosition' and a 'RoundedPosition'
-	// or find the right way!
-
-	// Use this for initialization
 	void Start()
 	{
 		State = PlayerState.Floating;
 		Velocity = JumpSpeed * -Vector2.up;
 	}
 
-	// Update is called once per frame
 	void Update()
 	{
 		SetPlayerOrientation(GetPlayerOrientation());
@@ -62,7 +53,8 @@ public class PlayerController : MonoBehaviour
 			WallComponent wall = collider.GetComponent<WallComponent>();
 			if (wall != null)
 			{
-				RaycastHit2D raycast = Physics2D.Raycast(transform.position, collider.transform.position - transform.position);
+				RaycastHit2D raycast = Physics2D.Raycast(transform.position, collider.transform.position - transform.position, float.MaxValue, LayerMask.GetMask("Wall"));
+				Debug.Log(raycast.normal);
 				if (raycast.normal == Vector2.up)
 				{
 					return PlayerOrientation.OnFloor;
@@ -87,27 +79,24 @@ public class PlayerController : MonoBehaviour
 
 	void SetPlayerOrientation(PlayerOrientation o)
 	{
-		Animator animator = GetComponent<Animator>();
-		animator.SetBool("OnFloor", false);
-		animator.SetBool("OnCeiling", false);
-		animator.SetBool("OnLeftWall", false);
-		animator.SetBool("OnRightWall", false);
+
+		SpriteRenderer renderer = GetComponentInChildren<SpriteRenderer>();
 
 		switch (o)
 		{
 			case PlayerOrientation.OnLeftWall:
-				animator.SetBool("OnLeftWall", true);
+				renderer.transform.eulerAngles = new Vector3(0, 0, -90);
 				break;
 			case PlayerOrientation.OnRightWall:
-				animator.SetBool("OnRightWall", true);
+				renderer.transform.eulerAngles = new Vector3(0, 0, 90);
 				break;
 			case PlayerOrientation.OnCeiling:
-				animator.SetBool("OnCeiling", true);
+				renderer.transform.eulerAngles = new Vector3(0, 0, 180);
 				break;
 			case PlayerOrientation.OnFloor:
-				animator.SetBool("OnFloor", true);
+			case PlayerOrientation.Floating:
+				renderer.transform.eulerAngles = new Vector3(0, 0, 0);
 				break;
-
 		}
 
 		if (Orientation == PlayerOrientation.Floating && o != PlayerOrientation.Floating)
@@ -152,6 +141,35 @@ public class PlayerController : MonoBehaviour
 		return direction.normalized;
 	}
 
+	Vector2 GetJumpDirection()
+	{
+		Vector2 direction = Vector2.zero;
+
+		if (Input.GetKey(KeyCode.W))
+		{
+			direction += Vector2.up;
+		}
+		if (Input.GetKey(KeyCode.S))
+		{
+			direction -= Vector2.up;
+		}
+		if (Input.GetKey(KeyCode.A))
+		{
+			direction -= Vector2.right;
+		}
+		if (Input.GetKey(KeyCode.D))
+		{
+			direction += Vector2.right;
+		}
+
+		if (direction == Vector2.zero)
+		{
+			direction = Vector2.up;
+		}
+
+		return direction.normalized;
+	}
+
 	void QueryInput()
 	{
 		if (OnVerticalSurface())
@@ -161,7 +179,7 @@ public class PlayerController : MonoBehaviour
 				// move up if on wall
 				Velocity = Vector2.up * WalkSpeed;
 			}
-			else if (Input.GetKey(KeyCode.D))
+			else if (Input.GetKey(KeyCode.S))
 			{
 				// move down if on wall
 				Velocity = -Vector2.up * WalkSpeed;
@@ -192,13 +210,8 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			Debug.Log("JUMP");
-
-			Vector2 jumpDirection = GetAimDirection();
+			Vector2 jumpDirection = GetJumpDirection();
 			Velocity = jumpDirection * JumpSpeed;
 		}
-
-		// TODO - space -> jump in mouse direction
-		// TODO - click -> fire weapon
 	}
 }
