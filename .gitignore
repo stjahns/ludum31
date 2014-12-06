@@ -1,0 +1,33 @@
+# Generated files...
+Temp/
+Obj/
+UnityGenerated/
+Library/
+Saved\ Data/
+
+# VS / MonoDevelop ...
+
+ExportedObj/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+
+# OS generated ...
+.DS_Store
+.DS_Store?
+Thumbs.db
+
+# Editor generated ...
+*.swn
+*.swm
+*.swp
+ProjectSettings/Physics2DSettings.asset
+
+# Omnisharp server script
+omnisharp.sh
