@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
 		get { return _state; }
 		set 
 		{
-			Debug.Log(value);
 			_state = value; 
 		}
 	}
@@ -45,8 +44,18 @@ public class PlayerController : MonoBehaviour
 		Velocity = JumpSpeed * -Vector2.up;
 	}
 
+	void UpdateAnimatorParams()
+	{
+		Animator animator = GetComponentInChildren<Animator>();
+		if (animator)
+		{
+			animator.SetFloat("Speed", Velocity.magnitude);
+		}
+	}
+
 	void Update()
 	{
+		UpdateAnimatorParams();
 
 		if (State == PlayerState.Walking)
 		{
@@ -202,6 +211,31 @@ public class PlayerController : MonoBehaviour
 		return direction.normalized;
 	}
 
+	void FaceDirection(Vector2 direction)
+	{
+		SpriteRenderer renderer = GetComponentInChildren<SpriteRenderer>();
+
+		switch (Orientation)
+		{
+			case PlayerOrientation.OnFloor:
+				renderer.transform.localScale = new Vector3(direction.x, 1, 1);
+				break;
+
+			case PlayerOrientation.OnCeiling:
+				renderer.transform.localScale = new Vector3(-direction.x, 1, 1);
+				break;
+
+			case PlayerOrientation.OnLeftWall:
+				renderer.transform.localScale = new Vector3(-direction.y, 1, 1);
+				break;
+
+			case PlayerOrientation.OnRightWall:
+				renderer.transform.localScale = new Vector3(direction.y, 1, 1);
+				break;
+		}
+
+	}
+
 	void QueryInput()
 	{
 		if (State == PlayerState.Walking)
@@ -212,11 +246,13 @@ public class PlayerController : MonoBehaviour
 				{
 					// move up if on wall
 					Velocity = Vector2.up * WalkSpeed;
+					FaceDirection(Vector2.up);
 				}
 				else if (Input.GetKey(KeyCode.S))
 				{
 					// move down if on wall
 					Velocity = -Vector2.up * WalkSpeed;
+					FaceDirection(-Vector2.up);
 				}
 				else
 				{
@@ -230,11 +266,13 @@ public class PlayerController : MonoBehaviour
 				{
 					// move left if on floor / ceiling
 					Velocity = -Vector2.right * WalkSpeed;
+					FaceDirection(-Vector2.right);
 				}
 				else if (Input.GetKey(KeyCode.D))
 				{
 					// move right if on floor / ceiling
 					Velocity = Vector2.right * WalkSpeed;
+					FaceDirection(Vector2.right);
 				}
 				else
 				{
