@@ -42,6 +42,8 @@ public class SpaceCharacterController : MonoBehaviour
 	public AudioClip LandingSound;
 	public AudioClip JumpSound;
 
+	public GameObject CorpsePrefab;
+
 	void Start()
 	{
 		State = CharacterState.Floating;
@@ -277,6 +279,13 @@ public class SpaceCharacterController : MonoBehaviour
 	public void Kill()
 	{
 		AudioSource.PlayClipAtPoint(DeathSound, transform.position);
+
+		if (CorpsePrefab)
+		{
+			// TODO - orientation?
+			Instantiate(CorpsePrefab, transform.position, Quaternion.identity);
+		}
+
 		Destroy(gameObject);
 	}
 
