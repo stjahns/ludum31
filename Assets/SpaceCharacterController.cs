@@ -82,6 +82,9 @@ public class SpaceCharacterController : MonoBehaviour
 	{
 		UpdateAnimatorParams();
 
+		if (WalkingIn)
+			return;
+
 		if (transform.position.magnitude > CleanUpDistance)
 		{
 			AddDamage();
@@ -107,7 +110,6 @@ public class SpaceCharacterController : MonoBehaviour
 			if (GetCharacterOrientation() == CharacterOrientation.Floating)
 			State = CharacterState.Floating;
 		}
-
 
 		RaycastHit2D raycast = Physics2D.Raycast(transform.position, Velocity, WallStickRadius, BlockingLayerMask());
 		if (raycast.normal == Vector2.zero)

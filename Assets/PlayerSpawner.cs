@@ -10,13 +10,17 @@ public class PlayerSpawner : MonoBehaviour
 	public GameObject RoachPartyPrefab;
 
 	public Animator ExterminatorShip;
-	public Animator AirlockDoor_Exterminator;
-	public Animator AirlockDoor_Main;
+	public AirlockDoor AirlockDoor_Exterminator;
+	public AirlockDoor AirlockDoor_Main;
+	public AirlockDoor AirlockDoor_Inner;
 
 	public SpaceCharacterController SpawnedPlayer;
 
 	public event Action PlayerKilled;
 	public event Action RoachPlayerKilled;
+
+	public Sprite AirlockTallOpen;
+	public Sprite AirlockTallClosed;
 
 	public void Start()
 	{
@@ -28,6 +32,9 @@ public class PlayerSpawner : MonoBehaviour
 		SpawnedPlayer = playerObject.GetComponent<PlayerController>();
 		SpawnedPlayer.OnDeath += OnPlayerKilled;
 		SpawnedPlayer.transform.parent = ExterminatorShip.transform; // Stay with ship...
+
+		SpawnedPlayer.State = SpaceCharacterController.CharacterState.Walking;
+		SpawnedPlayer.Velocity = Vector2.zero;
 
 		StartCoroutine(WalkIn());
 		return SpawnedPlayer;
@@ -49,42 +56,56 @@ public class PlayerSpawner : MonoBehaviour
 		//GameObject playerObject = Instantiate(RoachPartyPrefab, transform.position, Quaternion.identity) as GameObject;
 	}
 
+	public Transform AirlockCenter;
+
 	IEnumerator WalkIn()
 	{
 		yield return new WaitForSeconds(1.0f);
+
+		SpawnedPlayer.Velocity = Vector2.zero;
 
 		ExterminatorShip.SetTrigger("FlyIn");
 
 		yield return new WaitForSeconds(4.0f);
 
-		AirlockDoor_Exterminator.SetBool("Open", true);
-		AirlockDoor_Main.SetBool("Open", true);
+		AirlockDoor_Exterminator.Open();
+		AirlockDoor_Main.Open();
 
 		SpawnedPlayer.transform.parent = null; // Be freee!
 
 		yield return new WaitForSeconds(0.2f);
 
-		// Consider just manually animating ...
 
-		float walkTime = 0.1f;
-		while(walkTime > 0)
+		Vector2 startPosition = SpawnedPlayer.transform.position;
+		Vector2 endPostion = AirlockCenter.position;
+
+		SpawnedPlayer.Velocity = -Vector2.right;
+		float totalWalkTime = 1.5f;
+		float walkTime = 0.0f;
+		while(walkTime <= totalWalkTime)
 		{
-			walkTime -= Time.deltaTime;
-			SpawnedPlayer.Walk(-Vector2.right);
+			SpawnedPlayer.transform.position = Vector2.Lerp(startPosition, endPostion, walkTime / totalWalkTime);
+			walkTime += Time.deltaTime;
 			yield return 0;
 		}
 
+		SpawnedPlayer.Velocity = Vector2.zero;
+
 		yield return new WaitForSeconds(0.5f);
 
-		AirlockDoor_Exterminator.SetBool("Open", false);
-		AirlockDoor_Main.SetBool("Open", false);
+		AirlockDoor_Exterminator.Close();
+		AirlockDoor_Main.Close();
+
+		yield return new WaitForSeconds(0.5f);
+
+		AirlockDoor_Inner.Open();
 
 		yield return new WaitForSeconds(1f);
 
-		ExterminatorShip.SetTrigger("FlyOut");
-
 		SpawnedPlayer.WalkingIn = false;
 		SpawnedPlayer.HumanControlled = true;
+
+		ExterminatorShip.SetTrigger("FlyOut");
 	}
 
 	public void OnRoachPlayerKilled(GameObject player)
