@@ -156,6 +156,13 @@ public class SpaceCharacterController : MonoBehaviour
 
 	protected void Jump(Vector2 direction)
 	{
+		// Direction must be in general direction of normal...
+		Vector2 normal = GetNormalForOrientation();
+		if (Vector2.Dot(normal, direction) <= 0)
+		{
+			return; // Don't jump
+		}
+
 		if (JumpSound)
 			AudioSource.PlayClipAtPoint(JumpSound, transform.position);
 		Velocity = direction * JumpSpeed;
