@@ -18,15 +18,14 @@ public class Game : MonoBehaviour
 
 	public int WaveNumber = 1;
 	
-	IEnumerator Start()
+	void Start()
 	{
-		// TODO - fly in ship with first dood (part of spawner?)
+		playerSpawner.PlayerKilled += OnPlayerKilled;
 
 		liveRoaches.ForEach(r => r.OnDeath += OnRoachKilled);
 
 		// Flash title text
-		yield return new WaitForSeconds(2.0f);
-		StartCoroutine(FlashText(TitleText));
+		StartCoroutine(ResetPlayer());
 	}
 
 	void Update()
@@ -128,6 +127,20 @@ public class Game : MonoBehaviour
 		StartCoroutine(FlashText(SecondTitleText));
 	}
 
+	void OnPlayerKilled()
+	{
+		StartCoroutine(ResetPlayer());
+	}
+
+	IEnumerator ResetPlayer()
+	{
+		// Respawn and flash title again..
+		playerSpawner.SpawnPlayer();
+
+		yield return new WaitForSeconds(2.0f);
+
+		StartCoroutine(FlashText(TitleText));
+	}
 
 	void OnRoachKilled(GameObject roach)
 	{

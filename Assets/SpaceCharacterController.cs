@@ -6,6 +6,9 @@ public class SpaceCharacterController : MonoBehaviour
 {
 	public event Action<GameObject> OnDeath;
 
+	public bool HumanControlled = false;
+	public bool WalkingIn = false;
+
 	public enum CharacterState
 	{
 		Walking,
@@ -30,6 +33,15 @@ public class SpaceCharacterController : MonoBehaviour
 		{
 			_state = value; 
 		}
+	}
+
+	virtual public int BlockingLayerMask()
+	{
+		if (WalkingIn)
+		{ 
+			return LayerMask.GetMask("Wall");
+		}
+		return LayerMask.GetMask("Wall", "EntranceDoor");
 	}
 
 	public CharacterOrientation Orientation;
@@ -106,7 +118,22 @@ public class SpaceCharacterController : MonoBehaviour
 		UpdateControl();
 	}
 
-	virtual protected void UpdateControl()
+	protected virtual void UpdateControl()
+	{
+		if (HumanControlled)
+		{
+			GetHumanControl();
+		}
+		else
+		{
+			if (!WalkingIn)
+			{
+				GetAutomatedControl();
+			}
+		}
+	}
+
+	protected virtual void GetAutomatedControl()
 	{
 	}
 
@@ -172,11 +199,6 @@ public class SpaceCharacterController : MonoBehaviour
 			AudioSource.PlayClipAtPoint(JumpSound, transform.position);
 		Velocity = direction * JumpSpeed;
 		State = CharacterState.Jumping;
-	}
-
-	virtual public int BlockingLayerMask()
-	{
-		return LayerMask.GetMask("Wall", "EntranceDoor");
 	}
 
 	public void Walk(Vector2 direction)
@@ -323,6 +345,87 @@ public class SpaceCharacterController : MonoBehaviour
 			}
 
 			Destroy(gameObject);
+		}
+	}
+
+	protected Vector2 GetJumpDirection()
+	{
+		Vector2 direction = Vector2.zero;
+
+		if (Input.GetKey(KeyCode.W))
+		{
+			direction += Vector2.up;
+		}
+		if (Input.GetKey(KeyCode.S))
+		{
+			direction -= Vector2.up;
+		}
+		if (Input.GetKey(KeyCode.A))
+		{
+			direction -= Vector2.right;
+		}
+		if (Input.GetKey(KeyCode.D))
+		{
+			direction += Vector2.right;
+		}
+
+		if (direction == Vector2.zero)
+		{
+			direction = GetNormalForOrientation();
+		}
+
+		return direction.normalized;
+	}
+
+	protected virtual void GetHumanControl()
+	{
+		if (State == CharacterState.Walking)
+		{
+			if (OnVerticalSurface())
+			{
+				if (Input.GetKey(KeyCode.W))
+				{
+					// move up if on wall
+					Walk(Vector2.up);
+					FaceDirection(Vector2.up);
+				}
+				else if (Input.GetKey(KeyCode.S))
+				{
+					// move down if on wall
+					Walk(-Vector2.up);
+					FaceDirection(-Vector2.up);
+				}
+				else
+				{
+					Velocity = Vector2.zero;
+				}
+			}
+
+			if (OnHorizontalSurface())
+			{
+				if (Input.GetKey(KeyCode.A))
+				{
+					// move left if on floor / ceiling
+					Walk(-Vector2.right);
+					FaceDirection(-Vector2.right);
+				}
+				else if (Input.GetKey(KeyCode.D))
+				{
+					// move right if on floor / ceiling
+					Walk(Vector2.right);
+					FaceDirection(Vector2.right);
+				}
+				else
+				{
+					Velocity = Vector2.zero;
+				}
+			}
+
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+				Vector2 jumpDirection = GetJumpDirection();
+				Jump(jumpDirection);
+			}
 		}
 	}
 }

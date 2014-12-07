@@ -3,7 +3,6 @@ using System.Collections;
 
 public class RoachController : SpaceCharacterController
 {
-
 	override protected void UpdateAnimatorParams()
 	{
 		base.UpdateAnimatorParams();
@@ -124,7 +123,7 @@ public class RoachController : SpaceCharacterController
 		}
 	}
 
-	protected override void UpdateControl()
+	override protected void GetAutomatedControl()
 	{
 		switch (State)
 		{ 

@@ -11,9 +11,6 @@ public class PlayerController : SpaceCharacterController
 
 	public AudioClip FiringSound;
 
-	public bool WalkingIn = true;
-	public bool HumanControlled = false;
-
 	override protected void Update()
 	{
 		base.Update();
@@ -37,15 +34,6 @@ public class PlayerController : SpaceCharacterController
 				GetAutomatedControl();
 			}
 		}
-	}
-
-	override public int BlockingLayerMask()
-	{
-		if (WalkingIn)
-		{ 
-			return LayerMask.GetMask("Wall");
-		}
-		return LayerMask.GetMask("Wall", "EntranceDoor");
 	}
 
 	void GetAutomatedControl()
@@ -141,42 +129,14 @@ public class PlayerController : SpaceCharacterController
 		return direction.normalized;
 	}
 
-	Vector2 GetJumpDirection()
-	{
-		Vector2 direction = Vector2.zero;
-
-		if (Input.GetKey(KeyCode.W))
-		{
-			direction += Vector2.up;
-		}
-		if (Input.GetKey(KeyCode.S))
-		{
-			direction -= Vector2.up;
-		}
-		if (Input.GetKey(KeyCode.A))
-		{
-			direction -= Vector2.right;
-		}
-		if (Input.GetKey(KeyCode.D))
-		{
-			direction += Vector2.right;
-		}
-
-		if (direction == Vector2.zero)
-		{
-			direction = GetNormalForOrientation();
-		}
-
-		return direction.normalized;
-	}
 
 	void Fire(Vector2 direction)
 	{
 		if (fireDelay <= 0)
 		{
 			AudioSource.PlayClipAtPoint(FiringSound, transform.position);
-			// TODO play firing sound
-			// TODO show muzzle effect
+
+			// TODO show muzzle effect?
 			// TODO shake screen?
 
 			Vector3 bulletOffset = direction * FireOffset;

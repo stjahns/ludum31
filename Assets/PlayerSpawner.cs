@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class PlayerSpawner : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class PlayerSpawner : MonoBehaviour
 
 	public PlayerController SpawnedPlayer;
 
+	public event Action PlayerKilled;
+
+
 	public void Start()
 	{
-		SpawnPlayer();
 	}
 
 	public void SpawnPlayer()
@@ -52,7 +55,9 @@ public class PlayerSpawner : MonoBehaviour
 
 	public void OnPlayerKilled(GameObject player)
 	{
-		// Tell game to show title again...?
-		SpawnPlayer();
+		if (PlayerKilled != null)
+		{
+			PlayerKilled();
+		}
 	}
 }
