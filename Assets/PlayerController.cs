@@ -12,13 +12,15 @@ public class PlayerController : SpaceCharacterController
 				if (Input.GetKey(KeyCode.W))
 				{
 					// move up if on wall
-					Velocity = Vector2.up * WalkSpeed;
+					//Velocity = Vector2.up * WalkSpeed;
+					Walk(Vector2.up);
 					FaceDirection(Vector2.up);
 				}
 				else if (Input.GetKey(KeyCode.S))
 				{
 					// move down if on wall
-					Velocity = -Vector2.up * WalkSpeed;
+					//Velocity = -Vector2.up * WalkSpeed;
+					Walk(-Vector2.up);
 					FaceDirection(-Vector2.up);
 				}
 				else
@@ -32,13 +34,15 @@ public class PlayerController : SpaceCharacterController
 				if (Input.GetKey(KeyCode.A))
 				{
 					// move left if on floor / ceiling
-					Velocity = -Vector2.right * WalkSpeed;
+					//Velocity = -Vector2.right * WalkSpeed;
+					Walk(-Vector2.right);
 					FaceDirection(-Vector2.right);
 				}
 				else if (Input.GetKey(KeyCode.D))
 				{
 					// move right if on floor / ceiling
-					Velocity = Vector2.right * WalkSpeed;
+					//Velocity = Vector2.right * WalkSpeed;
+					Walk(Vector2.right);
 					FaceDirection(Vector2.right);
 				}
 				else
@@ -109,7 +113,7 @@ public class PlayerController : SpaceCharacterController
 
 		if (direction == Vector2.zero)
 		{
-			direction = Vector2.up;
+			direction = GetNormalForOrientation();
 		}
 
 		return direction.normalized;

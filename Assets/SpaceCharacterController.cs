@@ -86,38 +86,89 @@ public class SpaceCharacterController : MonoBehaviour
 	{
 	}
 
+	public CharacterOrientation GetOrientationForNormal(Vector2 normal)
+	{
+		if (normal == Vector2.up)
+		{
+			return CharacterOrientation.OnFloor;
+		}
+		else if (normal == -Vector2.up)
+		{
+			return CharacterOrientation.OnCeiling;
+		}
+		else if (normal == Vector2.right)
+		{
+			return CharacterOrientation.OnLeftWall;
+		}
+		else if (normal == -Vector2.right)
+		{
+			return CharacterOrientation.OnRightWall;
+		}
+		else
+		{
+			return CharacterOrientation.Floating;
+		}
+	}
+
+	public Vector2 GetNormalForOrientation()
+	{
+		Vector2 normal = Vector2.zero;
+		switch (Orientation)
+		{
+			case CharacterOrientation.OnLeftWall:
+				normal = Vector2.right;
+				break;
+			case CharacterOrientation.OnRightWall:
+				normal = -Vector2.right;
+				break;
+			case CharacterOrientation.OnFloor:
+				normal = Vector2.up;
+				break;
+			case CharacterOrientation.OnCeiling:
+				normal = -Vector2.up;
+				break;
+			case CharacterOrientation.Floating:
+				normal = Vector2.zero;
+				break;
+		}
+
+		return normal;
+	}
+
+	protected void Walk(Vector2 direction)
+	{
+		// Check if there's a wall in the direction we are trying to walk...
+		Velocity = direction * WalkSpeed;
+
+		RaycastHit2D raycast = Physics2D.Raycast(transform.position, direction, WallStickRadius, LayerMask.GetMask("Wall"));
+		if (raycast.normal != Vector2.zero)
+		{
+			// Stick to the new wall!
+			SetCharacterOrientation(GetOrientationForNormal(raycast.normal));
+		}
+	}
+
 	CharacterOrientation GetCharacterOrientation()
 	{
-		// Check if we should stick to a wall
-		Collider2D collider = Physics2D.OverlapCircle(transform.position, WallStickRadius, LayerMask.GetMask("Wall"));
-		if (collider != null)
+		Vector2 normal = Vector2.zero;
+
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, WallStickRadius, LayerMask.GetMask("Wall"));
+		foreach(var collider in colliders)
 		{
-			//Debug.Log(collider);
 			WallComponent wall = collider.GetComponent<WallComponent>();
 			if (wall != null)
 			{
 				RaycastHit2D raycast = Physics2D.Raycast(transform.position, collider.transform.position - transform.position, float.MaxValue, LayerMask.GetMask("Wall"));
-				//Debug.Log(raycast.normal);
-				if (raycast.normal == Vector2.up)
+
+				// Prefer normal that matches current orientation...
+				if (normal == Vector2.zero || raycast.normal == GetNormalForOrientation())
 				{
-					return CharacterOrientation.OnFloor;
-				}
-				else if (raycast.normal == -Vector2.up)
-				{
-					return CharacterOrientation.OnCeiling;
-				}
-				else if (raycast.normal == Vector2.right)
-				{
-					return CharacterOrientation.OnLeftWall;
-				}
-				else if (raycast.normal == -Vector2.right)
-				{
-					return CharacterOrientation.OnRightWall;
+					normal = raycast.normal;
 				}
 			}
 		}
 
-		return CharacterOrientation.Floating;
+		return GetOrientationForNormal(normal);
 	}
 
 	protected virtual void OnLand()

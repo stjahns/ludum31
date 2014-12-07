@@ -2084,6 +2084,8 @@ MonoBehaviour:
   Velocity: {x: 0, y: 0}
   WalkSpeed: 5
   JumpSpeed: 8
+  MinWalkTime: 1
+  MaxWalkTime: 5
 --- !u!95 &353371619
 Animator:
   serializedVersion: 3

@@ -59,45 +59,45 @@ public class RoachController : SpaceCharacterController
 
 				if (walkLeft)
 				{
-					Velocity = -Vector2.right * WalkSpeed;
+					Walk(-Vector2.right);
 				}
 				else
 				{
-					Velocity = Vector2.right * WalkSpeed;
+					Walk(Vector2.right);
 				}
-				
+
 				break;
 
 			case CharacterOrientation.OnCeiling:
 				if (walkLeft)
 				{
-					Velocity = Vector2.right * WalkSpeed;
+					Walk(Vector2.right);
 				}
 				else
 				{
-					Velocity = -Vector2.right * WalkSpeed;
+					Walk(-Vector2.right);
 				}
 				break;
 
 			case CharacterOrientation.OnLeftWall:
 				if (walkLeft)
 				{
-					Velocity = Vector2.up * WalkSpeed;
+					Walk(Vector2.up);
 				}
 				else
 				{
-					Velocity = -Vector2.up * WalkSpeed;
+					Walk(-Vector2.up);
 				}
 				break;
 
 			case CharacterOrientation.OnRightWall:
 				if (walkLeft)
 				{
-					Velocity = -Vector2.up * WalkSpeed;
+					Walk(-Vector2.up);
 				}
 				else
 				{
-					Velocity = Vector2.up * WalkSpeed;
+					Walk(Vector2.up);
 				}
 				break;
 		}
