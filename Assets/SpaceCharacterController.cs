@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharacterController : MonoBehaviour
+public class SpaceCharacterController : MonoBehaviour
 {
 	public enum CharacterState
 	{
@@ -79,7 +79,11 @@ public class CharacterController : MonoBehaviour
 
 		transform.position = new Vector2(transform.position.x, transform.position.y) + Velocity * Time.deltaTime;
 
-		//QueryInput();
+		UpdateControl();
+	}
+
+	virtual protected void UpdateControl()
+	{
 	}
 
 	CharacterOrientation GetCharacterOrientation()
@@ -88,12 +92,12 @@ public class CharacterController : MonoBehaviour
 		Collider2D collider = Physics2D.OverlapCircle(transform.position, WallStickRadius, LayerMask.GetMask("Wall"));
 		if (collider != null)
 		{
-			Debug.Log(collider);
+			//Debug.Log(collider);
 			WallComponent wall = collider.GetComponent<WallComponent>();
 			if (wall != null)
 			{
 				RaycastHit2D raycast = Physics2D.Raycast(transform.position, collider.transform.position - transform.position, float.MaxValue, LayerMask.GetMask("Wall"));
-				Debug.Log(raycast.normal);
+				//Debug.Log(raycast.normal);
 				if (raycast.normal == Vector2.up)
 				{
 					return CharacterOrientation.OnFloor;
@@ -114,6 +118,10 @@ public class CharacterController : MonoBehaviour
 		}
 
 		return CharacterOrientation.Floating;
+	}
+
+	protected virtual void OnLand()
+	{
 	}
 
 	void SetCharacterOrientation(CharacterOrientation o)
@@ -142,22 +150,23 @@ public class CharacterController : MonoBehaviour
 		{
 			Velocity = Vector2.zero;
 			State = CharacterState.Walking;
+			OnLand();
 		}
 
 		Orientation = o;
 	}
 
-	bool OnVerticalSurface()
+	protected bool OnVerticalSurface()
 	{
 		return Orientation == CharacterOrientation.OnLeftWall || Orientation == CharacterOrientation.OnRightWall;
 	}
 
-	bool OnHorizontalSurface()
+	protected bool OnHorizontalSurface()
 	{
 		return Orientation == CharacterOrientation.OnFloor || Orientation == CharacterOrientation.OnCeiling;
 	}
 
-	void FaceDirection(Vector2 direction)
+	protected void FaceDirection(Vector2 direction)
 	{
 		SpriteRenderer renderer = GetComponentInChildren<SpriteRenderer>();
 

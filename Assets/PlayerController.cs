@@ -1,161 +1,65 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : SpaceCharacterController
 {
-
-	public enum PlayerState
+	override protected void UpdateControl()
 	{
-		Walking,
-		Jumping,
-		Floating
-	}
-
-	public enum PlayerOrientation
-	{
-		Floating,
-		OnLeftWall,
-		OnRightWall,
-		OnFloor,
-		OnCeiling
-	}
-
-	public PlayerState _state;
-	public PlayerState State
-	{
-		get { return _state; }
-		set 
+		if (State == CharacterState.Walking)
 		{
-			_state = value; 
-		}
-	}
-
-	public PlayerOrientation Orientation;
-
-	public float WallStickRadius = 1.0f;
-
-	public Vector2 Velocity;
-	public float WalkSpeed = 1.0f;
-	public float JumpSpeed = 1.0f;
-
-	void Start()
-	{
-		State = PlayerState.Floating;
-		Velocity = JumpSpeed * -Vector2.up;
-	}
-
-	void UpdateAnimatorParams()
-	{
-		Animator animator = GetComponentInChildren<Animator>();
-		if (animator)
-		{
-			animator.SetFloat("Speed", Velocity.magnitude);
-		}
-	}
-
-	void Update()
-	{
-		UpdateAnimatorParams();
-
-		if (State == PlayerState.Walking)
-		{
-			if (GetPlayerOrientation() == PlayerOrientation.Floating)
+			if (OnVerticalSurface())
 			{
-				// Walked off edge probably..
-				State = PlayerState.Floating;
+				if (Input.GetKey(KeyCode.W))
+				{
+					// move up if on wall
+					Velocity = Vector2.up * WalkSpeed;
+					FaceDirection(Vector2.up);
+				}
+				else if (Input.GetKey(KeyCode.S))
+				{
+					// move down if on wall
+					Velocity = -Vector2.up * WalkSpeed;
+					FaceDirection(-Vector2.up);
+				}
+				else
+				{
+					Velocity = Vector2.zero;
+				}
 			}
 
-		}
-
-		if (State == PlayerState.Floating)
-		{
-			SetPlayerOrientation(GetPlayerOrientation());
-		}
-
-		if (State == PlayerState.Jumping)
-		{
-			if (GetPlayerOrientation() == PlayerOrientation.Floating)
-			State = PlayerState.Floating;
-		}
-
-		transform.position = new Vector2(transform.position.x, transform.position.y) + Velocity * Time.deltaTime;
-
-		QueryInput();
-	}
-
-	PlayerOrientation GetPlayerOrientation()
-	{
-		// Check if we should stick to a wall
-		Collider2D collider = Physics2D.OverlapCircle(transform.position, WallStickRadius, LayerMask.GetMask("Wall"));
-		if (collider != null)
-		{
-			Debug.Log(collider);
-			WallComponent wall = collider.GetComponent<WallComponent>();
-			if (wall != null)
+			if (OnHorizontalSurface())
 			{
-				RaycastHit2D raycast = Physics2D.Raycast(transform.position, collider.transform.position - transform.position, float.MaxValue, LayerMask.GetMask("Wall"));
-				Debug.Log(raycast.normal);
-				if (raycast.normal == Vector2.up)
+				if (Input.GetKey(KeyCode.A))
 				{
-					return PlayerOrientation.OnFloor;
+					// move left if on floor / ceiling
+					Velocity = -Vector2.right * WalkSpeed;
+					FaceDirection(-Vector2.right);
 				}
-				else if (raycast.normal == -Vector2.up)
+				else if (Input.GetKey(KeyCode.D))
 				{
-					return PlayerOrientation.OnCeiling;
+					// move right if on floor / ceiling
+					Velocity = Vector2.right * WalkSpeed;
+					FaceDirection(Vector2.right);
 				}
-				else if (raycast.normal == Vector2.right)
+				else
 				{
-					return PlayerOrientation.OnLeftWall;
+					Velocity = Vector2.zero;
 				}
-				else if (raycast.normal == -Vector2.right)
-				{
-					return PlayerOrientation.OnRightWall;
-				}
+			}
+
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+				Vector2 jumpDirection = GetJumpDirection();
+				Velocity = jumpDirection * JumpSpeed;
+				State = CharacterState.Jumping;
 			}
 		}
 
-		return PlayerOrientation.Floating;
-	}
-
-	void SetPlayerOrientation(PlayerOrientation o)
-	{
-
-		SpriteRenderer renderer = GetComponentInChildren<SpriteRenderer>();
-
-		switch (o)
-		{
-			case PlayerOrientation.OnLeftWall:
-				renderer.transform.eulerAngles = new Vector3(0, 0, -90);
-				break;
-			case PlayerOrientation.OnRightWall:
-				renderer.transform.eulerAngles = new Vector3(0, 0, 90);
-				break;
-			case PlayerOrientation.OnCeiling:
-				renderer.transform.eulerAngles = new Vector3(0, 0, 180);
-				break;
-			case PlayerOrientation.OnFloor:
-			case PlayerOrientation.Floating:
-				renderer.transform.eulerAngles = new Vector3(0, 0, 0);
-				break;
+		Vector2 aimDirection = GetAimDirection();
+		if (aimDirection != Vector2.zero)
+		{ 
+			AimInDirection(aimDirection);
 		}
-
-		if (Orientation == PlayerOrientation.Floating && o != PlayerOrientation.Floating)
-		{
-			Velocity = Vector2.zero;
-			State = PlayerState.Walking;
-		}
-
-		Orientation = o;
-	}
-
-	bool OnVerticalSurface()
-	{
-		return Orientation == PlayerOrientation.OnLeftWall || Orientation == PlayerOrientation.OnRightWall;
-	}
-
-	bool OnHorizontalSurface()
-	{
-		return Orientation == PlayerOrientation.OnFloor || Orientation == PlayerOrientation.OnCeiling;
 	}
 
 	Vector2 GetAimDirection()
@@ -211,44 +115,6 @@ public class PlayerController : MonoBehaviour
 		return direction.normalized;
 	}
 
-	void FaceDirection(Vector2 direction)
-	{
-		SpriteRenderer renderer = GetComponentInChildren<SpriteRenderer>();
-
-		float xScale = direction.x;
-		if (xScale > 0) xScale = 1;
-		if (xScale < 0) xScale = -1;
-
-		float yScale = direction.y;
-		if (yScale > 0) yScale = 1;
-		if (yScale < 0) yScale = -1;
-
-		switch (Orientation)
-		{
-			case PlayerOrientation.OnFloor:
-			case PlayerOrientation.Floating:
-				if (xScale != 0)
-					renderer.transform.localScale = new Vector3(xScale, 1, 1);
-				break;
-
-			case PlayerOrientation.OnCeiling:
-				if (xScale != 0)
-					renderer.transform.localScale = new Vector3(-xScale, 1, 1);
-				break;
-
-			case PlayerOrientation.OnLeftWall:
-				if (yScale != 0)
-					renderer.transform.localScale = new Vector3(-yScale, 1, 1);
-				break;
-
-			case PlayerOrientation.OnRightWall:
-				if (yScale != 0)
-					renderer.transform.localScale = new Vector3(yScale, 1, 1);
-				break;
-		}
-
-	}
-
 	void AimInDirection(Vector2 direction)
 	{
 
@@ -262,29 +128,29 @@ public class PlayerController : MonoBehaviour
 
 			switch (Orientation)
 			{
-				case PlayerOrientation.Floating:
-				case PlayerOrientation.OnFloor:
+				case CharacterOrientation.Floating:
+				case CharacterOrientation.OnFloor:
 					animator.SetBool("AimUp", direction == Vector2.up);
 					animator.SetBool("AimDown", direction == -Vector2.up);
 					aimUpForward = (direction == new Vector2(1, 1).normalized) || (direction == new Vector2(-1, 1).normalized);
 					aimDownForward = (direction == new Vector2(1, -1).normalized) || (direction == new Vector2(-1, -1).normalized);
 					break;
 
-				case PlayerOrientation.OnCeiling:
+				case CharacterOrientation.OnCeiling:
 					animator.SetBool("AimUp", direction == -Vector2.up);
 					animator.SetBool("AimDown", direction == Vector2.up);
 					aimUpForward = (direction == new Vector2(1, -1).normalized) || (direction == new Vector2(-1, -1).normalized);
 					aimDownForward = (direction == new Vector2(1, 1).normalized) || (direction == new Vector2(-1, 1).normalized);
 					break;
 
-				case PlayerOrientation.OnLeftWall:
+				case CharacterOrientation.OnLeftWall:
 					animator.SetBool("AimUp", direction == Vector2.right);
 					animator.SetBool("AimDown", direction == -Vector2.right);
 					aimUpForward = (direction == new Vector2(1, 1).normalized) || (direction == new Vector2(1, -1).normalized);
 					aimDownForward = (direction == new Vector2(-1, 1).normalized) || (direction == new Vector2(-1, -1).normalized);
 					break;
 
-				case PlayerOrientation.OnRightWall:
+				case CharacterOrientation.OnRightWall:
 					animator.SetBool("AimUp", direction == -Vector2.right);
 					animator.SetBool("AimDown", direction == Vector2.right);
 					aimUpForward = (direction == new Vector2(-1, -1).normalized) || (direction == new Vector2(-1, 1).normalized);
@@ -297,64 +163,5 @@ public class PlayerController : MonoBehaviour
 
 		}
 
-	}
-
-	void QueryInput()
-	{
-		if (State == PlayerState.Walking)
-		{
-			if (OnVerticalSurface())
-			{
-				if (Input.GetKey(KeyCode.W))
-				{
-					// move up if on wall
-					Velocity = Vector2.up * WalkSpeed;
-					FaceDirection(Vector2.up);
-				}
-				else if (Input.GetKey(KeyCode.S))
-				{
-					// move down if on wall
-					Velocity = -Vector2.up * WalkSpeed;
-					FaceDirection(-Vector2.up);
-				}
-				else
-				{
-					Velocity = Vector2.zero;
-				}
-			}
-
-			if (OnHorizontalSurface())
-			{
-				if (Input.GetKey(KeyCode.A))
-				{
-					// move left if on floor / ceiling
-					Velocity = -Vector2.right * WalkSpeed;
-					FaceDirection(-Vector2.right);
-				}
-				else if (Input.GetKey(KeyCode.D))
-				{
-					// move right if on floor / ceiling
-					Velocity = Vector2.right * WalkSpeed;
-					FaceDirection(Vector2.right);
-				}
-				else
-				{
-					Velocity = Vector2.zero;
-				}
-			}
-
-			if (Input.GetKeyDown(KeyCode.Space))
-			{
-				Vector2 jumpDirection = GetJumpDirection();
-				Velocity = jumpDirection * JumpSpeed;
-				State = PlayerState.Jumping;
-			}
-		}
-
-		Vector2 aimDirection = GetAimDirection();
-		if (aimDirection != Vector2.zero)
-		{ 
-			AimInDirection(aimDirection);
-		}
 	}
 }
