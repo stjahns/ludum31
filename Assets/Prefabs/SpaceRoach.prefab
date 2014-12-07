@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.15999985, y: -5.21999979, z: 0}
+  m_LocalPosition: {x: 8.23999977, y: -3.26999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -106,6 +106,7 @@ MonoBehaviour:
   DeathSound: {fileID: 8300000, guid: 8c418a9143c61414c805ed6134199674, type: 3}
   LandingSound: {fileID: 8300000, guid: 1ffe77676243cfd4ca047ec17df17653, type: 3}
   JumpSound: {fileID: 8300000, guid: 60fcd0aa98ff4664cbe8fd5845c4df3d, type: 3}
+  CorpsePrefab: {fileID: 100000, guid: 6adbaad1e6a84b0459f8ceb6876d2406, type: 2}
   MinWalkTime: 1
   MaxWalkTime: 5
 --- !u!212 &21200000
