@@ -107,6 +107,8 @@ MonoBehaviour:
   LandingSound: {fileID: 8300000, guid: 1ffe77676243cfd4ca047ec17df17653, type: 3}
   JumpSound: {fileID: 8300000, guid: 60fcd0aa98ff4664cbe8fd5845c4df3d, type: 3}
   CorpsePrefab: {fileID: 100000, guid: 6adbaad1e6a84b0459f8ceb6876d2406, type: 2}
+  Health: 3
+  CleanUpDistance: 30
   MinWalkTime: 1
   MaxWalkTime: 5
 --- !u!212 &21200000

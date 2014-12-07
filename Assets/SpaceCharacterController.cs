@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class SpaceCharacterController : MonoBehaviour
 {
+	public event Action OnDeath;
+
 	public enum CharacterState
 	{
 		Walking,
@@ -44,6 +47,8 @@ public class SpaceCharacterController : MonoBehaviour
 
 	public GameObject CorpsePrefab;
 
+	public int Health = 1;
+
 	void Start()
 	{
 		State = CharacterState.Floating;
@@ -59,9 +64,16 @@ public class SpaceCharacterController : MonoBehaviour
 		}
 	}
 
+	public float CleanUpDistance = 15;
+
 	virtual protected void Update()
 	{
 		UpdateAnimatorParams();
+
+		if (transform.position.magnitude > CleanUpDistance)
+		{
+			AddDamage();
+		}
 
 		if (State == CharacterState.Walking)
 		{
@@ -150,14 +162,19 @@ public class SpaceCharacterController : MonoBehaviour
 		State = CharacterState.Jumping;
 	}
 
-	protected void Walk(Vector2 direction)
+	virtual public int BlockingLayerMask()
+	{
+		return LayerMask.GetMask("Wall", "EntranceDoor");
+	}
+
+	public void Walk(Vector2 direction)
 	{
 		FaceDirection(direction);
 
 		// Check if there's a wall in the direction we are trying to walk...
 		Velocity = direction * WalkSpeed;
 
-		RaycastHit2D raycast = Physics2D.Raycast(transform.position, direction, WallStickRadius, LayerMask.GetMask("Wall"));
+		RaycastHit2D raycast = Physics2D.Raycast(transform.position, direction, WallStickRadius, BlockingLayerMask());
 		if (raycast.normal != Vector2.zero)
 		{
 			// Stick to the new wall!
@@ -169,13 +186,13 @@ public class SpaceCharacterController : MonoBehaviour
 	{
 		Vector2 normal = Vector2.zero;
 
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, WallStickRadius, LayerMask.GetMask("Wall"));
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, WallStickRadius, BlockingLayerMask());
 		foreach(var collider in colliders)
 		{
 			WallComponent wall = collider.GetComponent<WallComponent>();
 			if (wall != null)
 			{
-				RaycastHit2D raycast = Physics2D.Raycast(transform.position, collider.transform.position - transform.position, float.MaxValue, LayerMask.GetMask("Wall"));
+				RaycastHit2D raycast = Physics2D.Raycast(transform.position, collider.transform.position - transform.position, float.MaxValue, BlockingLayerMask());
 
 				// Prefer normal that matches current orientation...
 				if (normal == Vector2.zero || raycast.normal == GetNormalForOrientation())
@@ -274,19 +291,26 @@ public class SpaceCharacterController : MonoBehaviour
 
 	}
 
-
-
-	public void Kill()
+	public void AddDamage()
 	{
-		AudioSource.PlayClipAtPoint(DeathSound, transform.position);
+		Health -= 1;
 
-		if (CorpsePrefab)
+		if (Health <= 0)
 		{
-			// TODO - orientation?
-			Instantiate(CorpsePrefab, transform.position, Quaternion.identity);
+			AudioSource.PlayClipAtPoint(DeathSound, transform.position);
+
+			if (CorpsePrefab)
+			{
+				// TODO - orientation?
+				Instantiate(CorpsePrefab, transform.position, Quaternion.identity);
+			}
+
+			if (OnDeath != null)
+			{
+				OnDeath();
+			}
+
+			Destroy(gameObject);
 		}
-
-		Destroy(gameObject);
 	}
-
 }

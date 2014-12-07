@@ -11,6 +11,9 @@ public class PlayerController : SpaceCharacterController
 
 	public AudioClip FiringSound;
 
+	public bool WalkingIn = true;
+	public bool HumanControlled = false;
+
 	override protected void Update()
 	{
 		base.Update();
@@ -22,6 +25,36 @@ public class PlayerController : SpaceCharacterController
 	}
 
 	override protected void UpdateControl()
+	{
+		if (HumanControlled)
+		{
+			GetHumanControl();
+		}
+		else
+		{
+			if (!WalkingIn)
+			{
+				GetAutomatedControl();
+			}
+		}
+	}
+
+	override public int BlockingLayerMask()
+	{
+		if (WalkingIn)
+		{ 
+			return LayerMask.GetMask("Wall");
+		}
+		return LayerMask.GetMask("Wall", "EntranceDoor");
+	}
+
+	void GetAutomatedControl()
+	{
+		// TODO
+		// Random whatever, shoot at stuff
+	}
+
+	void GetHumanControl()
 	{
 		if (State == CharacterState.Walking)
 		{

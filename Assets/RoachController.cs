@@ -158,7 +158,7 @@ public class RoachController : SpaceCharacterController
 		if (collider)
 		{
 			PlayerController player = collider.GetComponent<PlayerController>();
-			player.Kill();
+			player.AddDamage();
 		}
 
 	}

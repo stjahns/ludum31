@@ -6,6 +6,9 @@ public class Bullet : MonoBehaviour
 	public float Speed = 10f;
 
 	public AudioClip HitSound;
+	public GameObject RoachHitEffect;
+	public GameObject HitEffect;
+	public float HitEffectTime;
 
 	void Start()
 	{
@@ -14,15 +17,19 @@ public class Bullet : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D coll)
 	{
-		// TODO spawn some kind of burst / spark effect
-
-		AudioSource.PlayClipAtPoint(HitSound, transform.position);
+		GameObject effectPrefab = HitEffect;
 
 		var roach = coll.gameObject.GetComponent<RoachController>();
 		if (roach)
 		{
-			roach.Kill();
+			AudioSource.PlayClipAtPoint(HitSound, transform.position);
+			effectPrefab = RoachHitEffect;
+			roach.AddDamage();
 		}
+
+		Vector2 normal = coll.contacts[0].normal;
+		Object effect = Instantiate(effectPrefab, coll.contacts[0].point, Quaternion.FromToRotation(Vector2.up, normal));
+		Destroy(effect, HitEffectTime);
 
 		Destroy(gameObject);
 	}

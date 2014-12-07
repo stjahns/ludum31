@@ -107,10 +107,14 @@ MonoBehaviour:
   LandingSound: {fileID: 8300000, guid: 1ffe77676243cfd4ca047ec17df17653, type: 3}
   JumpSound: {fileID: 8300000, guid: a39553f946fb98042b6018d1da073c20, type: 3}
   CorpsePrefab: {fileID: 100000, guid: 708eaa6e78f543f4f891155b6964e911, type: 2}
+  Health: 1
+  CleanUpDistance: 30
   BulletPrefab: {fileID: 100000, guid: 28cf1e48f74209549a7c711c4b16dcee, type: 2}
   FireOffset: .600000024
   FireRate: .100000001
   FiringSound: {fileID: 8300000, guid: 0616ba5fef56dfe42ba9e39febdcfdac, type: 3}
+  WalkingIn: 1
+  HumanControlled: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
