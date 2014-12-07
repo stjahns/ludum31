@@ -176,7 +176,6 @@ public class PlayerController : SpaceCharacterController
 
 	override protected void GetHumanControl()
 	{
-		AutoFire();
 		base.GetHumanControl();
 
 
