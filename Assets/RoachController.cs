@@ -4,6 +4,16 @@ using System.Collections;
 public class RoachController : SpaceCharacterController
 {
 
+	override protected void UpdateAnimatorParams()
+	{
+		base.UpdateAnimatorParams();
+		Animator animator = GetComponentInChildren<Animator>();
+		if (animator)
+		{
+			animator.SetBool("Flying", State == CharacterState.Floating);
+		}
+	}
+
 	Vector2 GetRandomJumpDirection()
 	{
 		Vector2[] directions = new Vector2[3];
@@ -49,6 +59,17 @@ public class RoachController : SpaceCharacterController
 		// pick random left/right direction
 		walkLeft = Random.Range(0f, 1f) > 0.5;
 		walkingTime = Random.Range(MinWalkTime, MaxWalkTime);
+	}
+
+	protected override void SetCharacterOrientation(SpaceCharacterController.CharacterOrientation o)
+	{
+		base.SetCharacterOrientation(o);
+
+		if (State == CharacterState.Floating)
+		{
+			SpriteRenderer renderer = GetComponentInChildren<SpriteRenderer>();
+			renderer.transform.rotation = Quaternion.FromToRotation(Vector2.up, Velocity);
+		}
 	}
 
 	void RoachWalk()

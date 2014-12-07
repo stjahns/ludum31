@@ -43,7 +43,7 @@ public class SpaceCharacterController : MonoBehaviour
 		Velocity = JumpSpeed * -Vector2.up;
 	}
 
-	void UpdateAnimatorParams()
+	protected virtual void UpdateAnimatorParams()
 	{
 		Animator animator = GetComponentInChildren<Animator>();
 		if (animator)
@@ -137,6 +137,8 @@ public class SpaceCharacterController : MonoBehaviour
 
 	protected void Walk(Vector2 direction)
 	{
+		FaceDirection(direction);
+
 		// Check if there's a wall in the direction we are trying to walk...
 		Velocity = direction * WalkSpeed;
 
@@ -175,7 +177,7 @@ public class SpaceCharacterController : MonoBehaviour
 	{
 	}
 
-	void SetCharacterOrientation(CharacterOrientation o)
+	protected virtual void SetCharacterOrientation(CharacterOrientation o)
 	{
 
 		SpriteRenderer renderer = GetComponentInChildren<SpriteRenderer>();
