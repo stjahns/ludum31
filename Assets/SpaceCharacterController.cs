@@ -37,6 +37,11 @@ public class SpaceCharacterController : MonoBehaviour
 	public float WalkSpeed = 1.0f;
 	public float JumpSpeed = 1.0f;
 
+	public AudioClip WalkSound;
+	public AudioClip DeathSound;
+	public AudioClip LandingSound;
+	public AudioClip JumpSound;
+
 	void Start()
 	{
 		State = CharacterState.Floating;
@@ -135,6 +140,14 @@ public class SpaceCharacterController : MonoBehaviour
 		return normal;
 	}
 
+	protected void Jump(Vector2 direction)
+	{
+		if (JumpSound)
+			AudioSource.PlayClipAtPoint(JumpSound, transform.position);
+		Velocity = direction * JumpSpeed;
+		State = CharacterState.Jumping;
+	}
+
 	protected void Walk(Vector2 direction)
 	{
 		FaceDirection(direction);
@@ -175,6 +188,8 @@ public class SpaceCharacterController : MonoBehaviour
 
 	protected virtual void OnLand()
 	{
+		if (LandingSound)
+			AudioSource.PlayClipAtPoint(LandingSound, transform.position);
 	}
 
 	protected virtual void SetCharacterOrientation(CharacterOrientation o)
@@ -255,6 +270,14 @@ public class SpaceCharacterController : MonoBehaviour
 				break;
 		}
 
+	}
+
+
+
+	public void Kill()
+	{
+		AudioSource.PlayClipAtPoint(DeathSound, transform.position);
+		Destroy(gameObject);
 	}
 
 }

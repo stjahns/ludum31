@@ -138,8 +138,7 @@ public class RoachController : SpaceCharacterController
 				{
 					// Jump in random direction
 					Vector2 jumpDirection = GetRandomJumpDirection();
-					Velocity = jumpDirection * JumpSpeed;
-					State = CharacterState.Jumping;
+					Jump(jumpDirection);
 					break;
 				}
 				else
@@ -149,4 +148,19 @@ public class RoachController : SpaceCharacterController
 				break;
 		}
 	}
+
+	protected override void Update()
+	{
+		base.Update();
+
+		// Check if collision with player
+		Collider2D collider = Physics2D.OverlapCircle(transform.position, WallStickRadius, LayerMask.GetMask("Player"));
+		if (collider)
+		{
+			PlayerController player = collider.GetComponent<PlayerController>();
+			player.Kill();
+		}
+
+	}
+	
 }

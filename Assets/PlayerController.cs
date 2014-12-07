@@ -9,6 +9,8 @@ public class PlayerController : SpaceCharacterController
 	public float FireRate = 0.1f;
 	private float fireDelay = 0;
 
+	public AudioClip FiringSound;
+
 	override protected void Update()
 	{
 		base.Update();
@@ -70,8 +72,7 @@ public class PlayerController : SpaceCharacterController
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				Vector2 jumpDirection = GetJumpDirection();
-				Velocity = jumpDirection * JumpSpeed;
-				State = CharacterState.Jumping;
+				Jump(jumpDirection);
 			}
 		}
 
@@ -140,6 +141,7 @@ public class PlayerController : SpaceCharacterController
 	{
 		if (fireDelay <= 0)
 		{
+			AudioSource.PlayClipAtPoint(FiringSound, transform.position);
 			// TODO play firing sound
 			// TODO show muzzle effect
 			// TODO shake screen?
