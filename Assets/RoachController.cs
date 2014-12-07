@@ -19,6 +19,12 @@ public class RoachController : SpaceCharacterController
 	public float MinWalkTime = 1.0f;
 	public float MaxWalkTime = 5.0f;
 
+	override protected void Start()
+	{
+		base.Start();
+		Velocity = JumpSpeed * -Vector2.up;
+	}
+
 	protected override void OnLand()
 	{
 		// pick random left/right direction

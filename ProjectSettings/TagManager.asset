@@ -37,6 +37,10 @@ TagManager:
   User Layer 30: 
   User Layer 31: 
   m_SortingLayers:
+  - name: Stars
+    userID: 3
+    uniqueID: 2859681695
+    locked: 1
   - name: ShipExterior
     userID: 2
     uniqueID: 3819428659

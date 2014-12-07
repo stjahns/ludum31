@@ -9,6 +9,10 @@ public class PlayerSpawner : MonoBehaviour
 	public GameObject RoachPlayerPrefab;
 	public GameObject RoachPartyPrefab;
 
+	public Animator ExterminatorShip;
+	public Animator AirlockDoor_Exterminator;
+	public Animator AirlockDoor_Main;
+
 	public SpaceCharacterController SpawnedPlayer;
 
 	public event Action PlayerKilled;
@@ -22,7 +26,9 @@ public class PlayerSpawner : MonoBehaviour
 	{
 		GameObject playerObject = Instantiate(HumanPlayerPrefab, transform.position, Quaternion.identity) as GameObject;
 		SpawnedPlayer = playerObject.GetComponent<PlayerController>();
-		SpawnedPlayer.OnDeath += OnPlayerKilled; // TODO - must differentiate between human/roach!
+		SpawnedPlayer.OnDeath += OnPlayerKilled;
+		SpawnedPlayer.transform.parent = ExterminatorShip.transform; // Stay with ship...
+
 		StartCoroutine(WalkIn());
 		return SpawnedPlayer;
 	}
@@ -32,22 +38,35 @@ public class PlayerSpawner : MonoBehaviour
 		GameObject playerObject = Instantiate(RoachPlayerPrefab, transform.position, Quaternion.identity) as GameObject;
 		SpawnedPlayer = playerObject.GetComponent<SpaceCharacterController>();
 		SpawnedPlayer.OnDeath += OnRoachPlayerKilled;
+		SpawnedPlayer.transform.parent = ExterminatorShip.transform; // Stay with ship...
+
 		StartCoroutine(WalkIn());
 		return SpawnedPlayer;
 	}
 
 	public void SpawnRoachParty()
 	{
-		GameObject playerObject = Instantiate(RoachPartyPrefab, transform.position, Quaternion.identity) as GameObject;
+		//GameObject playerObject = Instantiate(RoachPartyPrefab, transform.position, Quaternion.identity) as GameObject;
 	}
 
 	IEnumerator WalkIn()
 	{
 		yield return new WaitForSeconds(1.0f);
 
-		// TODO open Door (play a sound)
+		ExterminatorShip.SetTrigger("FlyIn");
 
-		float walkTime = 1f;
+		yield return new WaitForSeconds(4.0f);
+
+		AirlockDoor_Exterminator.SetBool("Open", true);
+		AirlockDoor_Main.SetBool("Open", true);
+
+		SpawnedPlayer.transform.parent = null; // Be freee!
+
+		yield return new WaitForSeconds(0.2f);
+
+		// Consider just manually animating ...
+
+		float walkTime = 0.1f;
 		while(walkTime > 0)
 		{
 			walkTime -= Time.deltaTime;
@@ -55,7 +74,14 @@ public class PlayerSpawner : MonoBehaviour
 			yield return 0;
 		}
 
-		// TODO close door
+		yield return new WaitForSeconds(0.5f);
+
+		AirlockDoor_Exterminator.SetBool("Open", false);
+		AirlockDoor_Main.SetBool("Open", false);
+
+		yield return new WaitForSeconds(1f);
+
+		ExterminatorShip.SetTrigger("FlyOut");
 
 		SpawnedPlayer.WalkingIn = false;
 		SpawnedPlayer.HumanControlled = true;

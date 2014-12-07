@@ -11,6 +11,13 @@ public class PlayerController : SpaceCharacterController
 
 	public AudioClip FiringSound;
 
+
+	override protected void Start()
+	{
+		base.Start();
+		Velocity = JumpSpeed * -Vector2.up;
+	}
+
 	override protected void Update()
 	{
 		base.Update();

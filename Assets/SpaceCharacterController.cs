@@ -61,10 +61,10 @@ public class SpaceCharacterController : MonoBehaviour
 
 	public int Health = 1;
 
-	void Start()
+	protected virtual void Start()
 	{
 		State = CharacterState.Floating;
-		Velocity = JumpSpeed * -Vector2.up;
+		FaceDirection(-Vector2.right);
 	}
 
 	protected virtual void UpdateAnimatorParams()
