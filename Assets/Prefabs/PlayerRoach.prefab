@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5069c49d1005af64dab40693ad097e82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HumanControlled: 0
+  WalkingIn: 1
   _state: 0
   Orientation: 0
   WallStickRadius: .5
@@ -109,10 +111,8 @@ MonoBehaviour:
   CorpsePrefab: {fileID: 100000, guid: 6adbaad1e6a84b0459f8ceb6876d2406, type: 2}
   Health: 3
   CleanUpDistance: 30
-  HumanControlled: 0
   MinWalkTime: 1
   MaxWalkTime: 5
-  WalkingIn: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -134,7 +134,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 434b28d57567b0e48b56702d439fc999, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .382352948, g: .306444645, b: .306444645, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

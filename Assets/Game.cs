@@ -17,24 +17,23 @@ public class Game : MonoBehaviour
 	public List<RoachController> liveRoaches;
 
 	public int WaveNumber = 1;
+
+	public bool PlayerIsRoach = false;
+
+	public SpaceCharacterController CurrentHuman;
 	
 	void Start()
 	{
 		playerSpawner.PlayerKilled += OnPlayerKilled;
+		playerSpawner.RoachPlayerKilled += OnRoachPlayerKilled;
 
 		liveRoaches.ForEach(r => r.OnDeath += OnRoachKilled);
 
-		// Flash title text
 		StartCoroutine(ResetPlayer());
 	}
 
 	void Update()
 	{
-		// When human killed
-		// Bring in roach party shipt
-		// Flash party text	
-
-		//StartCoroutine(FlashText(PartyText), int.MaxValue);
 	}
 
 	IEnumerator FlashText(Text text, int numFlashes = 3)
@@ -55,7 +54,6 @@ public class Game : MonoBehaviour
 		{
 			case 2:
 				Wave5();
-				//Wave2();
 				break;
 			case 3:
 				Wave3();
@@ -118,9 +116,18 @@ public class Game : MonoBehaviour
 	{
 		yield return new WaitForSeconds(1f);
 
+		// Stop controlling human
+		if (playerSpawner.SpawnedPlayer)
+		{
+			playerSpawner.SpawnedPlayer.HumanControlled = false;
+		}
+
+		// TODO - If no human... ??? immediately jump to roach party?
+
 		// Spawn player controlled roach 
-		playerSpawner.SpawnedPlayer.HumanControlled = false;
 		playerSpawner.SpawnRoachPlayer();
+
+		PlayerIsRoach = true;
 
 		yield return new WaitForSeconds(1f);
 
@@ -129,17 +136,53 @@ public class Game : MonoBehaviour
 
 	void OnPlayerKilled()
 	{
+		if (PlayerIsRoach)
+		{
+			// Party time!
+			StartCoroutine(RoachParty());
+
+		}
+		else
+		{
+			StartCoroutine(ResetPlayer());
+		}
+	}
+
+	IEnumerator RoachParty()
+	{
+		playerSpawner.SpawnRoachPlayer();
+
+		yield return new WaitForSeconds(2.0f);
+
+		// TODO start party musics!
+
+		StartCoroutine(FlashText(PartyText, int.MaxValue));
+	}
+
+	void OnRoachPlayerKilled()
+	{
 		StartCoroutine(ResetPlayer());
 	}
 
 	IEnumerator ResetPlayer()
 	{
-		// Respawn and flash title again..
-		playerSpawner.SpawnPlayer();
+		if (PlayerIsRoach)
+		{
+			playerSpawner.SpawnRoachPlayer();
 
-		yield return new WaitForSeconds(2.0f);
+			yield return new WaitForSeconds(2.0f);
 
-		StartCoroutine(FlashText(TitleText));
+			StartCoroutine(FlashText(SecondTitleText));
+		}
+		else
+		{
+			// Respawn and flash title again..
+			CurrentHuman = playerSpawner.SpawnPlayer();
+
+			yield return new WaitForSeconds(2.0f);
+
+			StartCoroutine(FlashText(TitleText));
+		}
 	}
 
 	void OnRoachKilled(GameObject roach)

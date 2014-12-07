@@ -36,66 +36,15 @@ public class PlayerController : SpaceCharacterController
 		}
 	}
 
-	void GetAutomatedControl()
+	override protected void GetAutomatedControl()
 	{
 		// TODO
 		// Random whatever, shoot at stuff
 	}
 
-	void GetHumanControl()
+	override protected void GetHumanControl()
 	{
-		if (State == CharacterState.Walking)
-		{
-			if (OnVerticalSurface())
-			{
-				if (Input.GetKey(KeyCode.W))
-				{
-					// move up if on wall
-					//Velocity = Vector2.up * WalkSpeed;
-					Walk(Vector2.up);
-					FaceDirection(Vector2.up);
-				}
-				else if (Input.GetKey(KeyCode.S))
-				{
-					// move down if on wall
-					//Velocity = -Vector2.up * WalkSpeed;
-					Walk(-Vector2.up);
-					FaceDirection(-Vector2.up);
-				}
-				else
-				{
-					Velocity = Vector2.zero;
-				}
-			}
-
-			if (OnHorizontalSurface())
-			{
-				if (Input.GetKey(KeyCode.A))
-				{
-					// move left if on floor / ceiling
-					//Velocity = -Vector2.right * WalkSpeed;
-					Walk(-Vector2.right);
-					FaceDirection(-Vector2.right);
-				}
-				else if (Input.GetKey(KeyCode.D))
-				{
-					// move right if on floor / ceiling
-					//Velocity = Vector2.right * WalkSpeed;
-					Walk(Vector2.right);
-					FaceDirection(Vector2.right);
-				}
-				else
-				{
-					Velocity = Vector2.zero;
-				}
-			}
-
-			if (Input.GetKeyDown(KeyCode.Space))
-			{
-				Vector2 jumpDirection = GetJumpDirection();
-				Jump(jumpDirection);
-			}
-		}
+		base.GetHumanControl();
 
 		Vector2 aimDirection = GetAimDirection();
 		if (aimDirection != Vector2.zero)
