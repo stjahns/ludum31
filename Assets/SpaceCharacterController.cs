@@ -78,6 +78,23 @@ public class SpaceCharacterController : MonoBehaviour
 
 	public float CleanUpDistance = 15;
 
+	void EscapeFromEvilCorner()
+	{
+		// Have zero velocity and not close enough to corner because we a circle?
+		Collider2D collider = Physics2D.OverlapCircle(transform.position, WallStickRadius + 0.5f, BlockingLayerMask());
+		if (collider)
+		{
+			var direction = transform.position - collider.transform.position;
+			Velocity = JumpSpeed * direction.normalized;
+			AudioSource.PlayClipAtPoint(JumpSound, transform.position);
+		}
+		else
+		{ 
+			// Give up on life :( 
+			AddDamage();
+		}
+	}
+
 	virtual protected void Update()
 	{
 		UpdateAnimatorParams();
@@ -102,6 +119,11 @@ public class SpaceCharacterController : MonoBehaviour
 
 		if (State == CharacterState.Floating)
 		{
+			if (Velocity == Vector2.zero)
+			{
+				EscapeFromEvilCorner();
+			}
+
 			SetCharacterOrientation(GetCharacterOrientation());
 		}
 
@@ -225,14 +247,49 @@ public class SpaceCharacterController : MonoBehaviour
 		return normal;
 	}
 
-	protected void Jump(Vector2 direction)
+	bool ShouldBlockJump(Vector2 direction)
 	{
 		// Direction must be in general direction of normal...
 		Vector2 normal = GetNormalForOrientation();
 		if (Vector2.Dot(normal, direction) <= 0)
 		{
-			return; // Don't jump
+			return true; // Don't jump
 		}
+
+		Vector2 tangent = new Vector2(normal.y, normal.x);
+
+		// Don't jump if we are in a corner
+		RaycastHit2D raycast;
+
+		float checkDistance = WallStickRadius;
+		if (Vector2.Dot(tangent, direction) > 0)
+		{
+			// If we are closeish to a corner and jump diagonally into it we can also get stuck... increase distance to check..
+			checkDistance *= 2;
+		}
+		raycast = Physics2D.Raycast(transform.position, tangent, checkDistance, BlockingLayerMask());
+		if (raycast.normal != Vector2.zero)
+			return true;
+
+		checkDistance = WallStickRadius;
+		if (Vector2.Dot(-tangent, direction) > 0)
+		{
+			checkDistance *= 2;
+		}
+		raycast = Physics2D.Raycast(transform.position, -tangent, checkDistance, BlockingLayerMask());
+		if (raycast.normal != Vector2.zero)
+			return true;
+
+
+
+		return false;
+	}
+
+	protected void Jump(Vector2 direction)
+	{
+		if (ShouldBlockJump(direction))
+			return;
+		
 
 		if (JumpSound)
 			AudioSource.PlayClipAtPoint(JumpSound, transform.position);
