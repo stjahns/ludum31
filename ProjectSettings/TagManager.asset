@@ -18,7 +18,7 @@ TagManager:
   User Layer 11: Roaches
   User Layer 12: Gibs
   User Layer 13: EntranceDoor
-  User Layer 14: 
+  User Layer 14: stars
   User Layer 15: 
   User Layer 16: 
   User Layer 17: 
@@ -40,7 +40,7 @@ TagManager:
   - name: Stars
     userID: 3
     uniqueID: 2859681695
-    locked: 1
+    locked: 0
   - name: ShipExterior
     userID: 2
     uniqueID: 3819428659

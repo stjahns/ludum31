@@ -100,10 +100,10 @@ public class PlayerSpawner : MonoBehaviour
 
 		AirlockDoor_Inner.Open();
 
-		yield return new WaitForSeconds(1f);
-
 		SpawnedPlayer.WalkingIn = false;
 		SpawnedPlayer.HumanControlled = true;
+
+		yield return new WaitForSeconds(1f);
 
 		ExterminatorShip.SetTrigger("FlyOut");
 	}
