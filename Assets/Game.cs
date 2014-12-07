@@ -18,9 +18,10 @@ public class Game : MonoBehaviour
 
 	public int WaveNumber = 1;
 
-	public bool PlayerIsRoach = false;
+	public static bool PlayerIsRoach = false;
 
 	public SpaceCharacterController CurrentHuman;
+	public static SpaceCharacterController Player;
 	public static SpaceCharacterController PlayerRoach;
 	
 	void Start()
@@ -68,48 +69,41 @@ public class Game : MonoBehaviour
 		}
 	}
 
+	float MinWaveDelay = 1.0f;
+	float MaxWaveDelay = 5.0f;
+
+	IEnumerator SpawnCollection(IEnumerable<RoachSpawner> spawners)
+	{
+		foreach (var spawner in spawners)
+		{
+			yield return new WaitForSeconds(Random.Range(MinWaveDelay, MaxWaveDelay));
+			var roach = spawner.SpawnRoach();
+			roach.OnDeath += OnRoachKilled;
+			liveRoaches.Add(roach);
+		}
+	}
+	
+
 
 	public List<RoachSpawner> Wave2Spawners;
 	void Wave2()
 	{
-		Debug.Log("WAVE 2");
-		foreach (var spawner in Wave2Spawners)
-		{
-			var roach = spawner.SpawnRoach();
-			roach.OnDeath += OnRoachKilled;
-			liveRoaches.Add(roach);
-		}
+		StartCoroutine(SpawnCollection(Wave2Spawners));
 	}
 
 	void Wave3()
 	{
-		Debug.Log("WAVE 3");
-		foreach (var spawner in roachSpawners)
-		{
-			var roach = spawner.SpawnRoach();
-			roach.OnDeath += OnRoachKilled;
-			liveRoaches.Add(roach);
-		}
+		StartCoroutine(SpawnCollection(roachSpawners));
 	}
 
 	void Wave4()
 	{
-		Debug.Log("WAVE 4");
-		foreach (var spawner in roachSpawners)
-		{
-			var roach = spawner.SpawnRoach();
-			roach.OnDeath += OnRoachKilled;
-			liveRoaches.Add(roach);
-
-			roach = spawner.SpawnRoach();
-			roach.OnDeath += OnRoachKilled;
-			liveRoaches.Add(roach);
-		}
+		StartCoroutine(SpawnCollection(roachSpawners));
+		StartCoroutine(SpawnCollection(roachSpawners));
 	}
 
 	void Wave5()
 	{
-		Debug.Log("WAVE 5 -- Reversal");
 		StartCoroutine(RoachVengeance());
 	}
 
@@ -127,6 +121,7 @@ public class Game : MonoBehaviour
 
 		// Spawn player controlled roach 
 		PlayerRoach = playerSpawner.SpawnRoachPlayer();
+		Player = PlayerRoach;
 
 		PlayerIsRoach = true;
 
@@ -179,6 +174,7 @@ public class Game : MonoBehaviour
 		{
 			// Respawn and flash title again..
 			CurrentHuman = playerSpawner.SpawnPlayer();
+			Player = CurrentHuman;
 
 			yield return new WaitForSeconds(2.0f);
 

@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 58: {fileID: 5800000}
   - 114: {fileID: 11400000}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: PlayerRoach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200000}
   - 95: {fileID: 9500000}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: RoachSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

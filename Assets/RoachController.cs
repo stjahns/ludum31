@@ -22,7 +22,16 @@ public class RoachController : SpaceCharacterController
 	override protected void Start()
 	{
 		base.Start();
-		Velocity = JumpSpeed * -Vector2.up;
+
+		Vector2 toPlayer = GetClosestPlayerDirection(); // If we can attack player, jump at 'em!
+		if (toPlayer != Vector2.zero)
+		{
+			Velocity = JumpSpeed * toPlayer;
+		}
+		else
+		{
+			Velocity = JumpSpeed * -Vector2.up;
+		}
 	}
 
 	protected override void OnLand()

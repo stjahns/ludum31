@@ -37,11 +37,11 @@ public class SpaceCharacterController : MonoBehaviour
 
 	virtual public int BlockingLayerMask()
 	{
-		if (WalkingIn)
+		if (WalkingIn || HumanControlled)
 		{ 
 			return LayerMask.GetMask("Wall");
 		}
-		return LayerMask.GetMask("Wall", "EntranceDoor");
+		return LayerMask.GetMask("Wall", "EntranceDoor", "PlayerOnly");
 	}
 
 	public CharacterOrientation Orientation;
@@ -280,7 +280,10 @@ public class SpaceCharacterController : MonoBehaviour
 		if (raycast.normal != Vector2.zero)
 			return true;
 
-
+		// ALSO don't jump if we are under a low ceiling...
+		raycast = Physics2D.Raycast(transform.position, normal, WallStickRadius + 0.1f, BlockingLayerMask());
+		if (raycast.normal != Vector2.zero)
+			return true;
 
 		return false;
 	}
@@ -523,5 +526,47 @@ public class SpaceCharacterController : MonoBehaviour
 				Jump(jumpDirection);
 			}
 		}
+	}
+
+	Vector2[] aimDirections = new Vector2[] {
+				new Vector2(1, 1).normalized,
+				new Vector2(-1, -1).normalized,
+				new Vector2(1, -1).normalized,
+				new Vector2(-1, 1).normalized,
+				new Vector2(1, 0),
+				new Vector2(0, 1),
+				new Vector2(-1, 0),
+				new Vector2(0, -1)
+			};
+
+	public Vector2 GetClosestPlayerDirection()
+	{
+		Vector2 bestDirection = Vector2.zero;
+
+		if (Game.Player)
+		{
+			Vector3 direction = Game.Player.transform.position - transform.position;
+
+			RaycastHit2D raycast = Physics2D.Raycast(transform.position, direction, 100, LayerMask.GetMask("Wall", "EntranceDoor", "Player"));
+
+			// Check line of sight
+			if (raycast.collider != null && raycast.collider.GetComponent<SpaceCharacterController>() == Game.Player)
+			{
+				float bestDirectionError = float.MaxValue;
+
+				foreach (var aimDirection in aimDirections)
+				{
+					Vector2 d = direction;
+					float error = (aimDirection - d).sqrMagnitude;
+					if (error < bestDirectionError)
+					{
+						bestDirectionError = error;
+						bestDirection = aimDirection;
+					}
+				}
+			}
+		}
+
+		return bestDirection;
 	}
 }

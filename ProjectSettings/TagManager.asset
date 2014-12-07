@@ -19,7 +19,7 @@ TagManager:
   User Layer 12: Gibs
   User Layer 13: EntranceDoor
   User Layer 14: stars
-  User Layer 15: 
+  User Layer 15: PlayerOnly
   User Layer 16: 
   User Layer 17: 
   User Layer 18: 
@@ -40,15 +40,15 @@ TagManager:
   - name: Stars
     userID: 3
     uniqueID: 2859681695
-    locked: 0
+    locked: 1
   - name: ShipExterior
     userID: 2
     uniqueID: 3819428659
-    locked: 1
+    locked: 0
   - name: WallBG
     userID: 1
     uniqueID: 3292187403
-    locked: 0
+    locked: 1
   - name: Default
     userID: 0
     uniqueID: 0

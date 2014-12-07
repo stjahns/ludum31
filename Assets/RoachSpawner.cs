@@ -35,6 +35,8 @@ public class RoachSpawner : MonoBehaviour {
 			SpawnedRoach.OnDeath += OnRoachKilled;
 		}
 
+		// Give it a random direction?
+
 		return SpawnedRoach;
 	}
 

@@ -15,7 +15,7 @@ public class AirlockDoor : MonoBehaviour
 
 		var animator = GetComponent<Animator>();
 		animator.SetBool("Open", true);
-		collider2D.enabled = false;
+		gameObject.layer = LayerMask.NameToLayer("PlayerOnly");
 		AudioSource.PlayClipAtPoint(openClip, transform.position);
 		isOpen = true;
 	}
@@ -26,7 +26,7 @@ public class AirlockDoor : MonoBehaviour
 			return;
 		var animator = GetComponent<Animator>();
 		animator.SetBool("Open", false);
-		collider2D.enabled = true;
+		gameObject.layer = LayerMask.NameToLayer("Wall");
 		AudioSource.PlayClipAtPoint(closeClip, transform.position);
 		isOpen = false;
 	}

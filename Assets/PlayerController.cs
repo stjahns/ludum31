@@ -109,48 +109,13 @@ public class PlayerController : SpaceCharacterController
 		}
 	}
 
-	Vector2[] aimDirections = new Vector2[] {
-				new Vector2(1, 1).normalized,
-				new Vector2(-1, -1).normalized,
-				new Vector2(1, -1).normalized,
-				new Vector2(-1, 1).normalized,
-				new Vector2(1, 0),
-				new Vector2(0, 1),
-				new Vector2(-1, 0),
-				new Vector2(0, -1)
-			};
-
 	void AutoFire()
 	{
-		var roach = GameObject.FindObjectOfType<RoachController>();
-		if (roach)
+		Vector2 aimDirection = GetClosestPlayerDirection();
+		if (aimDirection != Vector2.zero)
 		{
-			Vector3 direction = roach.transform.position - transform.position;
-
-			RaycastHit2D raycast = Physics2D.Raycast(transform.position, direction, 100, LayerMask.GetMask("Wall", "EntranceDoor", "Roaches"));
-
-			// Check line of sight
-			if (raycast.collider != null && raycast.collider.GetComponent<RoachController>())
-			{
-				// Aim and shoot in general direction of player roach...
-
-				Vector2 bestDirection = new Vector2(0, 0);
-				float bestDirectionError = float.MaxValue;
-
-				foreach (var aimDirection in aimDirections)
-				{
-					Vector2 d = direction;
-					float error = (aimDirection - d).sqrMagnitude;
-					if (error < bestDirectionError)
-					{
-						bestDirectionError = error;
-						bestDirection = aimDirection;
-					}
-				}
-
-				AimInDirection(bestDirection);
-				Fire(bestDirection);
-			}
+			AimInDirection(aimDirection);
+			Fire(aimDirection);
 		}
 	}
 

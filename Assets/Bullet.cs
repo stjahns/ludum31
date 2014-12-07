@@ -19,12 +19,16 @@ public class Bullet : MonoBehaviour
 	{
 		GameObject effectPrefab = HitEffect;
 
-		var roach = coll.gameObject.GetComponent<RoachController>();
-		if (roach)
+		var dude = coll.gameObject.GetComponent<SpaceCharacterController>();
+		if (dude)
 		{
-			AudioSource.PlayClipAtPoint(HitSound, transform.position);
-			effectPrefab = RoachHitEffect;
-			roach.AddDamage();
+			// Bullets shouldn't hit player UNLESS player is actually a roach..
+			if (dude != Game.Player || Game.PlayerIsRoach)
+			{
+				AudioSource.PlayClipAtPoint(HitSound, transform.position);
+				effectPrefab = RoachHitEffect;
+				dude.AddDamage();
+			}
 		}
 
 		Vector2 normal = coll.contacts[0].normal;
