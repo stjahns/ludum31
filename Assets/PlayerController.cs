@@ -3,6 +3,22 @@ using System.Collections;
 
 public class PlayerController : SpaceCharacterController
 {
+	public GameObject BulletPrefab;
+
+	public float FireOffset = 0.3f;
+	public float FireRate = 0.1f;
+	private float fireDelay = 0;
+
+	override protected void Update()
+	{
+		base.Update();
+
+		if (fireDelay > 0)
+		{
+			fireDelay -= Time.deltaTime;
+		}
+	}
+
 	override protected void UpdateControl()
 	{
 		if (State == CharacterState.Walking)
@@ -63,6 +79,7 @@ public class PlayerController : SpaceCharacterController
 		if (aimDirection != Vector2.zero)
 		{ 
 			AimInDirection(aimDirection);
+			Fire(aimDirection);
 		}
 	}
 
@@ -117,6 +134,23 @@ public class PlayerController : SpaceCharacterController
 		}
 
 		return direction.normalized;
+	}
+
+	void Fire(Vector2 direction)
+	{
+		if (fireDelay <= 0)
+		{
+			// TODO play firing sound
+			// TODO show muzzle effect
+			// TODO shake screen?
+
+			Vector3 bulletOffset = direction * FireOffset;
+			Instantiate(BulletPrefab,
+						transform.position + bulletOffset,
+						Quaternion.FromToRotation(Vector2.up, direction));
+
+			fireDelay = FireRate;
+		}
 	}
 
 	void AimInDirection(Vector2 direction)

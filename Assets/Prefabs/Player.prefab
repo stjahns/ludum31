@@ -102,6 +102,9 @@ MonoBehaviour:
   Velocity: {x: 0, y: 0}
   WalkSpeed: 5
   JumpSpeed: 5
+  BulletPrefab: {fileID: 100000, guid: 28cf1e48f74209549a7c711c4b16dcee, type: 2}
+  FireOffset: .600000024
+  FireRate: .100000001
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

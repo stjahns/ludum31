@@ -52,7 +52,7 @@ public class SpaceCharacterController : MonoBehaviour
 		}
 	}
 
-	void Update()
+	virtual protected void Update()
 	{
 		UpdateAnimatorParams();
 
