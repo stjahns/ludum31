@@ -4,7 +4,7 @@ using System;
 
 public class SpaceCharacterController : MonoBehaviour
 {
-	public event Action OnDeath;
+	public event Action<GameObject> OnDeath;
 
 	public enum CharacterState
 	{
@@ -96,7 +96,12 @@ public class SpaceCharacterController : MonoBehaviour
 			State = CharacterState.Floating;
 		}
 
-		transform.position = new Vector2(transform.position.x, transform.position.y) + Velocity * Time.deltaTime;
+
+		RaycastHit2D raycast = Physics2D.Raycast(transform.position, Velocity, WallStickRadius, BlockingLayerMask());
+		if (raycast.normal == Vector2.zero)
+		{
+			transform.position = new Vector2(transform.position.x, transform.position.y) + Velocity * Time.deltaTime;
+		}
 
 		UpdateControl();
 	}
@@ -314,7 +319,7 @@ public class SpaceCharacterController : MonoBehaviour
 
 			if (OnDeath != null)
 			{
-				OnDeath();
+				OnDeath(gameObject);
 			}
 
 			Destroy(gameObject);

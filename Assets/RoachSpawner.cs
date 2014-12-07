@@ -6,16 +6,27 @@ public class RoachSpawner : MonoBehaviour {
 
 	public GameObject RoachPrefab;
 
+	public Sprite OpenedSprite;
+
 	public List<RoachController> SpawnedRoaches;
+
+	public bool Opened = false;
 
 	public void Start()
 	{
-		SpawnRoach();
+		if (Opened)
+		{
+			var renderer = base.renderer as SpriteRenderer;
+			renderer.sprite = OpenedSprite;
+		}
 	}
 
-	public void SpawnRoach()
+
+	public RoachController SpawnRoach()
 	{
-		// Blow open grate if necessary?
+		Opened = true;
+		var renderer = base.renderer as SpriteRenderer;
+		renderer.sprite = OpenedSprite;
 
 		GameObject roach = Instantiate(RoachPrefab, transform.position, Quaternion.identity) as GameObject;
 		var SpawnedRoach = roach.GetComponent<RoachController>();
@@ -23,10 +34,12 @@ public class RoachSpawner : MonoBehaviour {
 		{
 			SpawnedRoach.OnDeath += OnRoachKilled;
 		}
+
+		return SpawnedRoach;
 	}
 
-	public void OnRoachKilled()
+	public void OnRoachKilled(GameObject roach)
 	{
-		SpawnRoach();
+		//SpawnRoach();
 	}
 }

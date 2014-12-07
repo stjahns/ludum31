@@ -7,7 +7,7 @@ public class PlayerSpawner : MonoBehaviour
 	public GameObject HumanPlayerPrefab;
 	public GameObject RoachPlayerPrefab;
 
-	private PlayerController SpawnedPlayer;
+	public PlayerController SpawnedPlayer;
 
 	public void Start()
 	{
@@ -20,6 +20,14 @@ public class PlayerSpawner : MonoBehaviour
 		SpawnedPlayer = playerObject.GetComponent<PlayerController>();
 		SpawnedPlayer.OnDeath += OnPlayerKilled;
 		StartCoroutine(WalkIn());
+	}
+	
+	public void SpawnRoachPlayer()
+	{
+		GameObject playerObject = Instantiate(RoachPlayerPrefab, transform.position, Quaternion.identity) as GameObject;
+		//SpawnedPlayer = playerObject.GetComponent<PlayerController>();
+		//SpawnedPlayer.OnDeath += OnPlayerKilled;
+		//StartCoroutine(WalkIn());
 	}
 
 	IEnumerator WalkIn()
@@ -42,7 +50,7 @@ public class PlayerSpawner : MonoBehaviour
 		SpawnedPlayer.HumanControlled = true;
 	}
 
-	public void OnPlayerKilled()
+	public void OnPlayerKilled(GameObject player)
 	{
 		// Tell game to show title again...?
 		SpawnPlayer();
