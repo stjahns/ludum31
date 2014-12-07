@@ -37,6 +37,14 @@ TagManager:
   User Layer 30: 
   User Layer 31: 
   m_SortingLayers:
+  - name: ShipExterior
+    userID: 2
+    uniqueID: 3819428659
+    locked: 0
+  - name: WallBG
+    userID: 1
+    uniqueID: 3292187403
+    locked: 0
   - name: Default
     userID: 0
     uniqueID: 0
