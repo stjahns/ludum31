@@ -21,6 +21,7 @@ public class Game : MonoBehaviour
 	public bool PlayerIsRoach = false;
 
 	public SpaceCharacterController CurrentHuman;
+	public static SpaceCharacterController PlayerRoach;
 	
 	void Start()
 	{
@@ -125,7 +126,7 @@ public class Game : MonoBehaviour
 		// TODO - If no human... ??? immediately jump to roach party?
 
 		// Spawn player controlled roach 
-		playerSpawner.SpawnRoachPlayer();
+		PlayerRoach = playerSpawner.SpawnRoachPlayer();
 
 		PlayerIsRoach = true;
 

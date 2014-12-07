@@ -13,40 +13,6 @@ public class RoachController : SpaceCharacterController
 		}
 	}
 
-	Vector2 GetRandomJumpDirection()
-	{
-		Vector2[] directions = new Vector2[3];
-		switch (Orientation)
-		{
-			case CharacterOrientation.OnFloor:
-				directions[0] = Vector2.up;
-				directions[1] = new Vector2(1, 1).normalized;
-				directions[2] = new Vector2(-1, 1).normalized;
-				break;
-
-			case CharacterOrientation.OnCeiling:
-				directions[0] = -Vector2.up;
-				directions[1] = new Vector2(-1, -1).normalized;
-				directions[2] = new Vector2(1, -1).normalized;
-				break;
-
-			case CharacterOrientation.OnLeftWall:
-				directions[0] = Vector2.right;
-				directions[1] = new Vector2(1, 1).normalized;
-				directions[2] = new Vector2(1, -1).normalized;
-				break;
-
-			case CharacterOrientation.OnRightWall:
-				directions[0] = -Vector2.right;
-				directions[1] = new Vector2(-1, 1).normalized;
-				directions[2] = new Vector2(-1, -1).normalized;
-				break;
-		}
-
-		int index = Random.Range(0, 2);
-		return directions[index];
-	}
-
 	private float walkingTime;
 	private bool walkLeft;
 
