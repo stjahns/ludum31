@@ -10,6 +10,8 @@ public class RoachSpawner : MonoBehaviour {
 
 	public List<RoachController> SpawnedRoaches;
 
+	public AudioClip PopSound;
+
 	public bool Opened = false;
 
 	public void Start()
@@ -24,6 +26,11 @@ public class RoachSpawner : MonoBehaviour {
 
 	public RoachController SpawnRoach()
 	{
+		if (!Opened)
+		{
+			AudioSource.PlayClipAtPoint(PopSound, transform.position);
+		}
+
 		Opened = true;
 		var renderer = base.renderer as SpriteRenderer;
 		renderer.sprite = OpenedSprite;

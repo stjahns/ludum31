@@ -133,12 +133,26 @@ public class RoachController : SpaceCharacterController
 	{
 		base.Update();
 
+		int layerMask;
+
+		if (Game.PlayerIsRoach)
+		{
+			layerMask = LayerMask.GetMask("NPC");
+		}
+		else
+		{
+			layerMask = LayerMask.GetMask("Player");
+		}
+
 		// Check if collision with player
-		Collider2D collider = Physics2D.OverlapCircle(transform.position, WallStickRadius, LayerMask.GetMask("Player"));
+		Collider2D collider = Physics2D.OverlapCircle(transform.position, WallStickRadius, layerMask);
 		if (collider)
 		{
 			PlayerController player = collider.GetComponent<PlayerController>();
-			player.AddDamage();
+			if (player)
+			{
+				player.AddDamage();
+			}
 		}
 
 	}

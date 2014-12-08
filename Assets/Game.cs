@@ -55,7 +55,8 @@ public class Game : MonoBehaviour
 		switch (WaveNumber)
 		{
 			case 2:
-				Wave2();
+				Wave5();
+				//Wave2();
 				break;
 			case 3:
 				Wave3();
@@ -115,6 +116,7 @@ public class Game : MonoBehaviour
 		if (playerSpawner.SpawnedPlayer)
 		{
 			playerSpawner.SpawnedPlayer.HumanControlled = false;
+			playerSpawner.SpawnedPlayer.gameObject.layer = LayerMask.NameToLayer("NPC");
 		}
 
 		// TODO - If no human... ??? immediately jump to roach party?
@@ -146,7 +148,7 @@ public class Game : MonoBehaviour
 
 	IEnumerator RoachParty()
 	{
-		playerSpawner.SpawnRoachPlayer();
+		playerSpawner.SpawnRoachParty();
 
 		yield return new WaitForSeconds(2.0f);
 
@@ -164,7 +166,8 @@ public class Game : MonoBehaviour
 	{
 		if (PlayerIsRoach)
 		{
-			playerSpawner.SpawnRoachPlayer();
+			PlayerRoach = playerSpawner.SpawnRoachPlayer();
+			Player = PlayerRoach;
 
 			yield return new WaitForSeconds(2.0f);
 

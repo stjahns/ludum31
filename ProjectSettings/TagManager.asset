@@ -20,7 +20,7 @@ TagManager:
   User Layer 13: EntranceDoor
   User Layer 14: stars
   User Layer 15: PlayerOnly
-  User Layer 16: 
+  User Layer 16: NPC
   User Layer 17: 
   User Layer 18: 
   User Layer 19: 
@@ -40,7 +40,7 @@ TagManager:
   - name: Stars
     userID: 3
     uniqueID: 2859681695
-    locked: 1
+    locked: 0
   - name: ShipExterior
     userID: 2
     uniqueID: 3819428659
@@ -48,8 +48,12 @@ TagManager:
   - name: WallBG
     userID: 1
     uniqueID: 3292187403
-    locked: 1
+    locked: 0
   - name: Default
     userID: 0
     uniqueID: 0
+    locked: 0
+  - name: PartyBusFG
+    userID: 4
+    uniqueID: 1722171345
     locked: 0
