@@ -55,8 +55,7 @@ public class Game : MonoBehaviour
 		switch (WaveNumber)
 		{
 			case 2:
-				Wave5();
-				//Wave2();
+				Wave2();
 				break;
 			case 3:
 				Wave3();

@@ -24,6 +24,7 @@ public class PlayerSpawner : MonoBehaviour
 	public Sprite RoachShip;
 	public Sprite RoachPartyShip;
 
+	public AudioClip ShipSound;
 
 	public void Start()
 	{
@@ -78,6 +79,7 @@ public class PlayerSpawner : MonoBehaviour
 		yield return new WaitForSeconds(1.0f);
 
 		ExterminatorShip.SetTrigger("FlyIn");
+		AudioSource.PlayClipAtPoint(ShipSound, transform.position);
 
 		yield return new WaitForSeconds(4.0f);
 
@@ -107,6 +109,8 @@ public class PlayerSpawner : MonoBehaviour
 		SpawnedPlayer.Velocity = Vector2.zero;
 
 		ExterminatorShip.SetTrigger("FlyIn");
+
+		AudioSource.PlayClipAtPoint(ShipSound, transform.position);
 
 		yield return new WaitForSeconds(4.0f);
 
@@ -148,6 +152,7 @@ public class PlayerSpawner : MonoBehaviour
 		yield return new WaitForSeconds(1f);
 
 		ExterminatorShip.SetTrigger("FlyOut");
+		AudioSource.PlayClipAtPoint(ShipSound, transform.position);
 	}
 
 	public void OnRoachPlayerKilled(GameObject player)
