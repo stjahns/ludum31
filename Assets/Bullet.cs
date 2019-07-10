@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
 
 	void Start()
 	{
-		rigidbody2D.velocity = transform.rotation * Vector2.up * Speed;
+		GetComponent<Rigidbody2D>().velocity = transform.rotation * Vector2.up * Speed;
 	}
 
 	void OnCollisionEnter2D(Collision2D coll)

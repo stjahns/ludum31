@@ -18,7 +18,7 @@ public class RoachSpawner : MonoBehaviour {
 	{
 		if (Opened)
 		{
-			var renderer = base.renderer as SpriteRenderer;
+			var renderer = base.GetComponent<Renderer>() as SpriteRenderer;
 			renderer.sprite = OpenedSprite;
 		}
 	}
@@ -32,7 +32,7 @@ public class RoachSpawner : MonoBehaviour {
 		}
 
 		Opened = true;
-		var renderer = base.renderer as SpriteRenderer;
+		var renderer = base.GetComponent<Renderer>() as SpriteRenderer;
 		renderer.sprite = OpenedSprite;
 
 		GameObject roach = Instantiate(RoachPrefab, transform.position, Quaternion.identity) as GameObject;

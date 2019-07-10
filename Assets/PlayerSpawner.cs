@@ -40,7 +40,7 @@ public class PlayerSpawner : MonoBehaviour
 		GameObject playerObject = Instantiate(HumanPlayerPrefab, transform.position, Quaternion.identity) as GameObject;
 		SpawnedPlayer = playerObject.GetComponent<PlayerController>();
 		SpawnedPlayer.OnDeath += OnPlayerKilled;
-		SpawnedPlayer.transform.parent = ExterminatorShip.transform; // Stay with ship...
+		SpawnedPlayer.transform.SetParent(ExterminatorShip.transform); // Stay with ship...
 
 		SpawnedPlayer.State = SpaceCharacterController.CharacterState.Walking;
 		SpawnedPlayer.Velocity = Vector2.zero;
@@ -84,11 +84,11 @@ public class PlayerSpawner : MonoBehaviour
 		yield return new WaitForSeconds(4.0f);
 
 		AirlockDoor_Exterminator.Open();
-		AirlockDoor_Exterminator.collider2D.enabled = false;
+		AirlockDoor_Exterminator.GetComponent<Collider2D>().enabled = false;
 		AirlockDoor_Main.Open();
-		AirlockDoor_Main.collider2D.enabled = false;
+		AirlockDoor_Main.GetComponent<Collider2D>().enabled = false;
 		AirlockDoor_Inner.Open();
-		AirlockDoor_Inner.collider2D.enabled = false;
+		AirlockDoor_Inner.GetComponent<Collider2D>().enabled = false;
 
 		int partyCount = 0;
 

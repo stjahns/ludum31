@@ -8,14 +8,14 @@ public class StarField : MonoBehaviour {
 
 	void Start()
 	{
-		renderer.sortingLayerName = "Stars";
-		renderer.sortingOrder = -1000;
+		GetComponent<Renderer>().sortingLayerName = "Stars";
+		GetComponent<Renderer>().sortingOrder = -1000;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
 		xOffset -= Speed;
-		renderer.material.mainTextureOffset = new Vector2(xOffset, 0);
+		GetComponent<Renderer>().material.mainTextureOffset = new Vector2(xOffset, 0);
 	}
 }

@@ -1,68 +1,147 @@
 fileFormatVersion: 2
 guid: 78f51dc199e8e8245bc4f62466b79961
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: ShipTiles_0
-    21300002: ShipTiles_1
-    21300004: ShipTiles_2
-    21300006: ShipTiles_3
-    21300008: ShipTiles_4
-    21300010: ShipTiles_5
-    21300012: ShipTiles_6
-    21300014: ShipTiles_7
-    21300016: ShipTiles_8
-    21300018: ShipTiles_9
-    21300020: ShipTiles_10
-    21300022: ShipTiles_11
-    21300024: ShipTiles_12
-    21300026: ShipTiles_13
-    21300028: ShipTiles_14
-    21300030: ShipTiles_15
-    21300032: ShipTiles_16
-    21300034: ShipTiles_17
-    21300036: ShipTiles_18
-    21300038: ShipTiles_19
-    21300040: ShipTiles_20
-    21300042: ShipTiles_21
-    21300044: ShipTiles_22
-    21300046: ShipTiles_23
-    21300048: ShipTiles_24
-    21300050: ShipTiles_25
-    21300052: ShipTiles_26
-    21300054: ShipTiles_27
-    21300056: ShipTiles_28
-    21300058: ShipTiles_29
-    21300060: ShipTiles_30
-    21300062: ShipTiles_31
-    21300064: ShipTiles_32
-    21300066: ShipTiles_33
-    21300068: ShipTiles_34
-  serializedVersion: 2
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: ShipTiles_0
+  - first:
+      213: 21300002
+    second: ShipTiles_1
+  - first:
+      213: 21300004
+    second: ShipTiles_2
+  - first:
+      213: 21300006
+    second: ShipTiles_3
+  - first:
+      213: 21300008
+    second: ShipTiles_4
+  - first:
+      213: 21300010
+    second: ShipTiles_5
+  - first:
+      213: 21300012
+    second: ShipTiles_6
+  - first:
+      213: 21300014
+    second: ShipTiles_7
+  - first:
+      213: 21300016
+    second: ShipTiles_8
+  - first:
+      213: 21300018
+    second: ShipTiles_9
+  - first:
+      213: 21300020
+    second: ShipTiles_10
+  - first:
+      213: 21300022
+    second: ShipTiles_11
+  - first:
+      213: 21300024
+    second: ShipTiles_12
+  - first:
+      213: 21300026
+    second: ShipTiles_13
+  - first:
+      213: 21300028
+    second: ShipTiles_14
+  - first:
+      213: 21300030
+    second: ShipTiles_15
+  - first:
+      213: 21300032
+    second: ShipTiles_16
+  - first:
+      213: 21300034
+    second: ShipTiles_17
+  - first:
+      213: 21300036
+    second: ShipTiles_18
+  - first:
+      213: 21300038
+    second: ShipTiles_19
+  - first:
+      213: 21300040
+    second: ShipTiles_20
+  - first:
+      213: 21300042
+    second: ShipTiles_21
+  - first:
+      213: 21300044
+    second: ShipTiles_22
+  - first:
+      213: 21300046
+    second: ShipTiles_23
+  - first:
+      213: 21300048
+    second: ShipTiles_24
+  - first:
+      213: 21300050
+    second: ShipTiles_25
+  - first:
+      213: 21300052
+    second: ShipTiles_26
+  - first:
+      213: 21300054
+    second: ShipTiles_27
+  - first:
+      213: 21300056
+    second: ShipTiles_28
+  - first:
+      213: 21300058
+    second: ShipTiles_29
+  - first:
+      213: 21300060
+    second: ShipTiles_30
+  - first:
+      213: 21300062
+    second: ShipTiles_31
+  - first:
+      213: 21300064
+    second: ShipTiles_32
+  - first:
+      213: 21300066
+    second: ShipTiles_33
+  - first:
+      213: 21300068
+    second: ShipTiles_34
+  externalObjects: {}
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
   seamlessCubemap: 0
   textureFormat: -3
   maxTextureSize: 1024
   textureSettings:
-    filterMode: -1
+    serializedVersion: 2
+    filterMode: 0
     aniso: 16
-    mipBias: -1
-    wrapMode: 1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -70,15 +149,69 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: ShipTiles_0
+    - serializedVersion: 2
+      name: ShipTiles_0
       rect:
         serializedVersion: 2
         x: 0
@@ -88,7 +221,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_1
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db575d1c76934b44db07cb9987214ece
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_1
       rect:
         serializedVersion: 2
         x: 32
@@ -98,7 +242,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_2
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f328d68f53579b6469be7d6c8dee0922
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_2
       rect:
         serializedVersion: 2
         x: 64
@@ -108,7 +263,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_3
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce3aa5bdb2631d64a829ac1fb55c3881
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_3
       rect:
         serializedVersion: 2
         x: 96
@@ -118,7 +284,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_4
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bff1437ad0b664547b39050ae1a7a736
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_4
       rect:
         serializedVersion: 2
         x: 128
@@ -128,7 +305,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_5
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 691f1695f0d21cd4c885a1aeead9daad
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_5
       rect:
         serializedVersion: 2
         x: 0
@@ -138,7 +326,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_6
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4adc08efeb4259d43a11c34741032d64
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_6
       rect:
         serializedVersion: 2
         x: 32
@@ -148,7 +347,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_7
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dda1d17881d1df4988869b26e11071b
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_7
       rect:
         serializedVersion: 2
         x: 64
@@ -158,7 +368,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_8
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af936f1399af1324a89bc0461dafd9d4
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_8
       rect:
         serializedVersion: 2
         x: 96
@@ -168,7 +389,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_9
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 121606e383dcea74d840dda7b4ac7965
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_9
       rect:
         serializedVersion: 2
         x: 128
@@ -178,7 +410,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_10
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00f420033b3e0504db7b5164d3a1749e
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_10
       rect:
         serializedVersion: 2
         x: 0
@@ -188,7 +431,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_11
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ea25fae095f0f84b982a0eea3a35546
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_11
       rect:
         serializedVersion: 2
         x: 32
@@ -198,7 +452,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_12
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2953302410528e4f88b1db69e5bbe1a
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_12
       rect:
         serializedVersion: 2
         x: 64
@@ -208,7 +473,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_13
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 701ba5c8038d1684f94079af6e5d68cc
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_13
       rect:
         serializedVersion: 2
         x: 96
@@ -218,7 +494,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_14
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 310ab939ecb171e40a10d2356ef0726a
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_14
       rect:
         serializedVersion: 2
         x: 128
@@ -228,7 +515,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_15
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3c6c4b882f5498488ae6614959ea29f
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_15
       rect:
         serializedVersion: 2
         x: 0
@@ -238,7 +536,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_16
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e652d345b351c2489728e36124945e6
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_16
       rect:
         serializedVersion: 2
         x: 32
@@ -248,7 +557,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_17
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f36f3c6d16753764393db6d3b89efacc
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_17
       rect:
         serializedVersion: 2
         x: 64
@@ -258,7 +578,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_18
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 031db0cdcaf206f48bccafd21ee57492
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_18
       rect:
         serializedVersion: 2
         x: 96
@@ -268,7 +599,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_19
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c7990067d932d4d9e0a1b7d7f52abc
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_19
       rect:
         serializedVersion: 2
         x: 128
@@ -278,7 +620,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_20
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 008147b0483a07f46b42b5e03a9ffa86
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_20
       rect:
         serializedVersion: 2
         x: 0
@@ -288,7 +641,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_21
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4139668e12ace794d8483427dcd0a758
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_21
       rect:
         serializedVersion: 2
         x: 32
@@ -298,7 +662,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_22
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2f7a4fea6d60b64a8c90bda4e8a3bc8
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_22
       rect:
         serializedVersion: 2
         x: 64
@@ -308,7 +683,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_23
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 276cab8f010f1ce43ba4b446b90fb414
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_23
       rect:
         serializedVersion: 2
         x: 96
@@ -318,7 +704,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_24
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d42d2cfb50521ff4886a7470111a5c4c
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_24
       rect:
         serializedVersion: 2
         x: 128
@@ -328,7 +725,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_25
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f6f869d19fbe314e93b79e0c432cbc7
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_25
       rect:
         serializedVersion: 2
         x: 0
@@ -338,7 +746,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_26
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 584d2bf18856cd5498b519747623fd8a
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_26
       rect:
         serializedVersion: 2
         x: 32
@@ -348,7 +767,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_27
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0318744afc0d8dc40b9c49f19da8b4e7
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_27
       rect:
         serializedVersion: 2
         x: 64
@@ -358,7 +788,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_28
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d9845c92b99cd54da9d0fe6b6d6c5f8
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_28
       rect:
         serializedVersion: 2
         x: 96
@@ -368,7 +809,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_29
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ced89673011f7874fb580c1eb5896b4c
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_29
       rect:
         serializedVersion: 2
         x: 128
@@ -378,7 +830,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_30
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aec9c48b54e604249952d51589a2c921
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_30
       rect:
         serializedVersion: 2
         x: 0
@@ -388,7 +851,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_31
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 137c59fc70278e141bbe6c18775614ac
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_31
       rect:
         serializedVersion: 2
         x: 32
@@ -398,7 +872,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_32
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a04a8ec6b91f52429382793fb2957f0
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_32
       rect:
         serializedVersion: 2
         x: 64
@@ -408,7 +893,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_33
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8071e900f878eec4198a09839d7f38dc
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_33
       rect:
         serializedVersion: 2
         x: 96
@@ -418,7 +914,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipTiles_34
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8857db1ea7049c242be2097a71c25a4d
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipTiles_34
       rect:
         serializedVersion: 2
         x: 128
@@ -428,5 +935,29 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13325e2096c1ffc4fb46372aabc47aa8
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

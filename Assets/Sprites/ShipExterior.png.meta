@@ -1,113 +1,282 @@
 fileFormatVersion: 2
 guid: 8969ad995304aeb44a0a2ef20f7d8501
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: ShipExterior_0
-    21300002: ShipExterior_1
-    21300004: ShipExterior_2
-    21300006: ShipExterior_3
-    21300008: ShipExterior_4
-    21300010: ShipExterior_5
-    21300012: ShipExterior_6
-    21300014: ShipExterior_7
-    21300016: ShipExterior_8
-    21300018: ShipExterior_9
-    21300020: ShipExterior_10
-    21300022: ShipExterior_11
-    21300024: ShipExterior_12
-    21300026: ShipExterior_13
-    21300028: ShipExterior_14
-    21300030: ShipExterior_15
-    21300032: ShipExterior_16
-    21300034: ShipExterior_17
-    21300036: ShipExterior_18
-    21300038: ShipExterior_19
-    21300040: ShipExterior_20
-    21300042: ShipExterior_21
-    21300044: ShipExterior_22
-    21300046: ShipExterior_23
-    21300048: ShipExterior_24
-    21300050: ShipExterior_25
-    21300052: ShipExterior_26
-    21300054: ShipExterior_27
-    21300056: ShipExterior_28
-    21300058: ShipExterior_29
-    21300060: ShipExterior_30
-    21300062: ShipExterior_31
-    21300064: ShipExterior_32
-    21300066: ShipExterior_33
-    21300068: ShipExterior_34
-    21300070: ShipExterior_35
-    21300072: ShipExterior_36
-    21300074: ShipExterior_37
-    21300076: ShipExterior_38
-    21300078: ShipExterior_39
-    21300080: ShipExterior_40
-    21300082: ShipExterior_41
-    21300084: ShipExterior_42
-    21300086: ShipExterior_43
-    21300088: ShipExterior_44
-    21300090: ShipExterior_45
-    21300092: ShipExterior_46
-    21300094: ShipExterior_47
-    21300096: ShipExterior_48
-    21300098: ShipExterior_49
-    21300100: ShipExterior_50
-    21300102: ShipExterior_51
-    21300104: ShipExterior_52
-    21300106: ShipExterior_53
-    21300108: ShipExterior_54
-    21300110: ShipExterior_55
-    21300112: ShipExterior_56
-    21300114: ShipExterior_57
-    21300116: ShipExterior_58
-    21300118: ShipExterior_59
-    21300120: ShipExterior_60
-    21300122: ShipExterior_61
-    21300124: ShipExterior_62
-    21300126: ShipExterior_63
-    21300128: ShipExterior_64
-    21300130: ShipExterior_65
-    21300132: ShipExterior_66
-    21300134: ShipExterior_67
-    21300136: ShipExterior_68
-    21300138: ShipExterior_69
-    21300140: ShipExterior_70
-    21300142: ShipExterior_71
-    21300144: ShipExterior_72
-    21300146: ShipExterior_73
-    21300148: ShipExterior_74
-    21300150: ShipExterior_75
-    21300152: ShipExterior_76
-    21300154: ShipExterior_77
-    21300156: ShipExterior_78
-    21300158: ShipExterior_79
-  serializedVersion: 2
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: ShipExterior_0
+  - first:
+      213: 21300002
+    second: ShipExterior_1
+  - first:
+      213: 21300004
+    second: ShipExterior_2
+  - first:
+      213: 21300006
+    second: ShipExterior_3
+  - first:
+      213: 21300008
+    second: ShipExterior_4
+  - first:
+      213: 21300010
+    second: ShipExterior_5
+  - first:
+      213: 21300012
+    second: ShipExterior_6
+  - first:
+      213: 21300014
+    second: ShipExterior_7
+  - first:
+      213: 21300016
+    second: ShipExterior_8
+  - first:
+      213: 21300018
+    second: ShipExterior_9
+  - first:
+      213: 21300020
+    second: ShipExterior_10
+  - first:
+      213: 21300022
+    second: ShipExterior_11
+  - first:
+      213: 21300024
+    second: ShipExterior_12
+  - first:
+      213: 21300026
+    second: ShipExterior_13
+  - first:
+      213: 21300028
+    second: ShipExterior_14
+  - first:
+      213: 21300030
+    second: ShipExterior_15
+  - first:
+      213: 21300032
+    second: ShipExterior_16
+  - first:
+      213: 21300034
+    second: ShipExterior_17
+  - first:
+      213: 21300036
+    second: ShipExterior_18
+  - first:
+      213: 21300038
+    second: ShipExterior_19
+  - first:
+      213: 21300040
+    second: ShipExterior_20
+  - first:
+      213: 21300042
+    second: ShipExterior_21
+  - first:
+      213: 21300044
+    second: ShipExterior_22
+  - first:
+      213: 21300046
+    second: ShipExterior_23
+  - first:
+      213: 21300048
+    second: ShipExterior_24
+  - first:
+      213: 21300050
+    second: ShipExterior_25
+  - first:
+      213: 21300052
+    second: ShipExterior_26
+  - first:
+      213: 21300054
+    second: ShipExterior_27
+  - first:
+      213: 21300056
+    second: ShipExterior_28
+  - first:
+      213: 21300058
+    second: ShipExterior_29
+  - first:
+      213: 21300060
+    second: ShipExterior_30
+  - first:
+      213: 21300062
+    second: ShipExterior_31
+  - first:
+      213: 21300064
+    second: ShipExterior_32
+  - first:
+      213: 21300066
+    second: ShipExterior_33
+  - first:
+      213: 21300068
+    second: ShipExterior_34
+  - first:
+      213: 21300070
+    second: ShipExterior_35
+  - first:
+      213: 21300072
+    second: ShipExterior_36
+  - first:
+      213: 21300074
+    second: ShipExterior_37
+  - first:
+      213: 21300076
+    second: ShipExterior_38
+  - first:
+      213: 21300078
+    second: ShipExterior_39
+  - first:
+      213: 21300080
+    second: ShipExterior_40
+  - first:
+      213: 21300082
+    second: ShipExterior_41
+  - first:
+      213: 21300084
+    second: ShipExterior_42
+  - first:
+      213: 21300086
+    second: ShipExterior_43
+  - first:
+      213: 21300088
+    second: ShipExterior_44
+  - first:
+      213: 21300090
+    second: ShipExterior_45
+  - first:
+      213: 21300092
+    second: ShipExterior_46
+  - first:
+      213: 21300094
+    second: ShipExterior_47
+  - first:
+      213: 21300096
+    second: ShipExterior_48
+  - first:
+      213: 21300098
+    second: ShipExterior_49
+  - first:
+      213: 21300100
+    second: ShipExterior_50
+  - first:
+      213: 21300102
+    second: ShipExterior_51
+  - first:
+      213: 21300104
+    second: ShipExterior_52
+  - first:
+      213: 21300106
+    second: ShipExterior_53
+  - first:
+      213: 21300108
+    second: ShipExterior_54
+  - first:
+      213: 21300110
+    second: ShipExterior_55
+  - first:
+      213: 21300112
+    second: ShipExterior_56
+  - first:
+      213: 21300114
+    second: ShipExterior_57
+  - first:
+      213: 21300116
+    second: ShipExterior_58
+  - first:
+      213: 21300118
+    second: ShipExterior_59
+  - first:
+      213: 21300120
+    second: ShipExterior_60
+  - first:
+      213: 21300122
+    second: ShipExterior_61
+  - first:
+      213: 21300124
+    second: ShipExterior_62
+  - first:
+      213: 21300126
+    second: ShipExterior_63
+  - first:
+      213: 21300128
+    second: ShipExterior_64
+  - first:
+      213: 21300130
+    second: ShipExterior_65
+  - first:
+      213: 21300132
+    second: ShipExterior_66
+  - first:
+      213: 21300134
+    second: ShipExterior_67
+  - first:
+      213: 21300136
+    second: ShipExterior_68
+  - first:
+      213: 21300138
+    second: ShipExterior_69
+  - first:
+      213: 21300140
+    second: ShipExterior_70
+  - first:
+      213: 21300142
+    second: ShipExterior_71
+  - first:
+      213: 21300144
+    second: ShipExterior_72
+  - first:
+      213: 21300146
+    second: ShipExterior_73
+  - first:
+      213: 21300148
+    second: ShipExterior_74
+  - first:
+      213: 21300150
+    second: ShipExterior_75
+  - first:
+      213: 21300152
+    second: ShipExterior_76
+  - first:
+      213: 21300154
+    second: ShipExterior_77
+  - first:
+      213: 21300156
+    second: ShipExterior_78
+  - first:
+      213: 21300158
+    second: ShipExterior_79
+  externalObjects: {}
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
   seamlessCubemap: 0
   textureFormat: -3
   maxTextureSize: 1024
   textureSettings:
-    filterMode: -1
+    serializedVersion: 2
+    filterMode: 0
     aniso: 16
-    mipBias: -1
-    wrapMode: 1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -115,15 +284,69 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: ShipExterior_0
+    - serializedVersion: 2
+      name: ShipExterior_0
       rect:
         serializedVersion: 2
         x: 0
@@ -133,7 +356,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_1
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfc6015bb1f9c1e46b9480b2b5651972
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_1
       rect:
         serializedVersion: 2
         x: 32
@@ -143,7 +377,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_2
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2de4966e8efbec499520bc8c2e462ad
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_2
       rect:
         serializedVersion: 2
         x: 64
@@ -153,7 +398,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_3
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fabbc06d0f9c2e459b39dfc15460a17
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_3
       rect:
         serializedVersion: 2
         x: 96
@@ -163,7 +419,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_4
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21d18c040cf68354b82fd481028c72d0
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_4
       rect:
         serializedVersion: 2
         x: 128
@@ -173,7 +440,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_5
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b5b0d680b0455344a76afa1d03c733b
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_5
       rect:
         serializedVersion: 2
         x: 0
@@ -183,7 +461,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_6
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ac3c19389219fc44b2b7ed91665983e
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_6
       rect:
         serializedVersion: 2
         x: 32
@@ -193,7 +482,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_7
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37c36190654d83d4e8116000ba543a9d
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_7
       rect:
         serializedVersion: 2
         x: 64
@@ -203,7 +503,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_8
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93a3659055b41c34fa67ca2b6a1ce101
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_8
       rect:
         serializedVersion: 2
         x: 96
@@ -213,7 +524,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_9
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7f89a1950ea4d04b8d15951fddbc1d1
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_9
       rect:
         serializedVersion: 2
         x: 128
@@ -223,7 +545,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_10
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5980286140e2eb4bb47024236f20017
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_10
       rect:
         serializedVersion: 2
         x: 0
@@ -233,7 +566,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_11
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c178c234e656bc4bbe2c661adfe4c06
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_11
       rect:
         serializedVersion: 2
         x: 32
@@ -243,7 +587,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_12
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d990791c4a8ef4698aa40f8359aefb
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_12
       rect:
         serializedVersion: 2
         x: 64
@@ -253,7 +608,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_13
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93ecc42d13f0e4c4fb5b72adfc3162f9
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_13
       rect:
         serializedVersion: 2
         x: 96
@@ -263,7 +629,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_14
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ee6aa0ac66d1f94c82069bf4dce6b62
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_14
       rect:
         serializedVersion: 2
         x: 128
@@ -273,7 +650,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_15
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dde1b18c38efea74591e30760d0c5646
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_15
       rect:
         serializedVersion: 2
         x: 0
@@ -283,7 +671,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_16
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1046df4f3a2034149ac0066f0208cb58
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_16
       rect:
         serializedVersion: 2
         x: 32
@@ -293,7 +692,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_17
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 871b1a6a89082a0408a294841c8dd7b6
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_17
       rect:
         serializedVersion: 2
         x: 64
@@ -303,7 +713,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_18
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07ca26a77d324644c9b98a3f4db41cac
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_18
       rect:
         serializedVersion: 2
         x: 96
@@ -313,7 +734,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_19
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: face1a08807b00a439e0ca935eeb05e6
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_19
       rect:
         serializedVersion: 2
         x: 128
@@ -323,7 +755,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_20
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d39de3a0392c74478a32c4c72d03b46
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_20
       rect:
         serializedVersion: 2
         x: 0
@@ -333,7 +776,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_21
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f84600ba4aaf214695e0d60608fae5c
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_21
       rect:
         serializedVersion: 2
         x: 32
@@ -343,7 +797,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_22
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4791434b0cf6974baab50a12dcbfe81
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_22
       rect:
         serializedVersion: 2
         x: 64
@@ -353,7 +818,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_23
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdc921c5fc92c224abfcea8189ff1196
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_23
       rect:
         serializedVersion: 2
         x: 96
@@ -363,7 +839,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_24
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c18d0506e182e69458cfcb4e77ee3413
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_24
       rect:
         serializedVersion: 2
         x: 128
@@ -373,7 +860,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_25
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa3fc960f3c6024492f2bf66f65762e
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_25
       rect:
         serializedVersion: 2
         x: 0
@@ -383,7 +881,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_26
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 352c843517d87a949932f60140ec6395
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_26
       rect:
         serializedVersion: 2
         x: 32
@@ -393,7 +902,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_27
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e7a5b8821abac9408f25ef60d1dfd6a
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_27
       rect:
         serializedVersion: 2
         x: 64
@@ -403,7 +923,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_28
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18e39669ffcebef478b79736440cf00c
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_28
       rect:
         serializedVersion: 2
         x: 96
@@ -413,7 +944,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_29
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56789d48827c4c54099e934929ae12bd
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_29
       rect:
         serializedVersion: 2
         x: 128
@@ -423,7 +965,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_30
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3be7e866d16a64643bc657b2df2c0ee9
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_30
       rect:
         serializedVersion: 2
         x: 0
@@ -433,7 +986,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_31
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cc13f9c4e79dcb40a04da52fd4cffb6
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_31
       rect:
         serializedVersion: 2
         x: 32
@@ -443,7 +1007,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_32
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c1aa391de0c4e34bb8e47b701515f4a
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_32
       rect:
         serializedVersion: 2
         x: 64
@@ -453,7 +1028,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_33
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c46f392d9465034986188d2d1969ec8
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_33
       rect:
         serializedVersion: 2
         x: 96
@@ -463,7 +1049,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_34
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14749085bc614dd4a827dd007536e6e7
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_34
       rect:
         serializedVersion: 2
         x: 128
@@ -473,7 +1070,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_35
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 019952e0078fb0842988a7f9e2b41247
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_35
       rect:
         serializedVersion: 2
         x: 0
@@ -483,7 +1091,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_36
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70fbb3d002fd7e84b8b0cf6288a5aceb
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_36
       rect:
         serializedVersion: 2
         x: 32
@@ -493,7 +1112,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_37
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f6b5c2b857afc44f97f8ee32c404686
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_37
       rect:
         serializedVersion: 2
         x: 64
@@ -503,7 +1133,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_38
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7494c934c27b0af479078a185de0cbeb
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_38
       rect:
         serializedVersion: 2
         x: 96
@@ -513,7 +1154,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_39
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8ac99d75adb6604e8ead05ea1ddf036
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_39
       rect:
         serializedVersion: 2
         x: 128
@@ -523,7 +1175,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_40
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0111bbd138861714cbba3f4a7ab420db
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_40
       rect:
         serializedVersion: 2
         x: 0
@@ -533,7 +1196,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_41
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eecbcdd4d30727458a9fe144c017280
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_41
       rect:
         serializedVersion: 2
         x: 32
@@ -543,7 +1217,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_42
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f46bca549cac9348a07804872870bb4
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_42
       rect:
         serializedVersion: 2
         x: 64
@@ -553,7 +1238,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_43
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689656bcafac72346a5fc55c8b7cacf5
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_43
       rect:
         serializedVersion: 2
         x: 96
@@ -563,7 +1259,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_44
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99cb111b86f511949b2407ba08ae808f
+      internalID: 21300086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_44
       rect:
         serializedVersion: 2
         x: 128
@@ -573,7 +1280,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_45
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d51f4d2f617fa9448f108d2437460e5
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_45
       rect:
         serializedVersion: 2
         x: 0
@@ -583,7 +1301,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_46
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b126a352fd137f7498e4d4b0b5cc7371
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_46
       rect:
         serializedVersion: 2
         x: 32
@@ -593,7 +1322,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_47
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b0a4f73fd4ab1c408dedd47fa5ecd81
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_47
       rect:
         serializedVersion: 2
         x: 64
@@ -603,7 +1343,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_48
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c0d56b798a0e7f458d1ab332a403a89
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_48
       rect:
         serializedVersion: 2
         x: 96
@@ -613,7 +1364,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_49
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf9e7698af228b24f9a396851f564b1e
+      internalID: 21300096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_49
       rect:
         serializedVersion: 2
         x: 128
@@ -623,7 +1385,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_50
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f82af8b63993ace4a891819310bff5d0
+      internalID: 21300098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_50
       rect:
         serializedVersion: 2
         x: 0
@@ -633,7 +1406,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_51
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04d568b0de205c84e8982e7c574eb965
+      internalID: 21300100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_51
       rect:
         serializedVersion: 2
         x: 32
@@ -643,7 +1427,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_52
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 951d72369f66b7e4f992c3f4de2de175
+      internalID: 21300102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_52
       rect:
         serializedVersion: 2
         x: 64
@@ -653,7 +1448,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_53
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9677a7fff9e666e42afef6a488654f98
+      internalID: 21300104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_53
       rect:
         serializedVersion: 2
         x: 96
@@ -663,7 +1469,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_54
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f68d09ec3c4d24f449e08a5fba380218
+      internalID: 21300106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_54
       rect:
         serializedVersion: 2
         x: 128
@@ -673,7 +1490,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_55
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ed6274922efaf4ea54447f40b7d427
+      internalID: 21300108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_55
       rect:
         serializedVersion: 2
         x: 0
@@ -683,7 +1511,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_56
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49acb45f33952c5499af87ede5af3f41
+      internalID: 21300110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_56
       rect:
         serializedVersion: 2
         x: 32
@@ -693,7 +1532,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_57
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e5f7203d36473b41854b3653235f03d
+      internalID: 21300112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_57
       rect:
         serializedVersion: 2
         x: 64
@@ -703,7 +1553,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_58
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d11d9184ba5e93642b0bada0fb70dd9a
+      internalID: 21300114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_58
       rect:
         serializedVersion: 2
         x: 96
@@ -713,7 +1574,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_59
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4dc247eca0d51c4f80ec12d7051b03e
+      internalID: 21300116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_59
       rect:
         serializedVersion: 2
         x: 128
@@ -723,7 +1595,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_60
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b57c47cd1c0bf14b8b46033e066f7dc
+      internalID: 21300118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_60
       rect:
         serializedVersion: 2
         x: 0
@@ -733,7 +1616,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_61
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2bc31e2bacf8f145acc0512f30dbb4f
+      internalID: 21300120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_61
       rect:
         serializedVersion: 2
         x: 32
@@ -743,7 +1637,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_62
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cf2d1e87bab0314690f57f90693a8b0
+      internalID: 21300122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_62
       rect:
         serializedVersion: 2
         x: 64
@@ -753,7 +1658,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_63
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55b156051b4043942a8930c6a301dddc
+      internalID: 21300124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_63
       rect:
         serializedVersion: 2
         x: 96
@@ -763,7 +1679,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_64
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3af17bda0e6edb74181e0f544711a1fd
+      internalID: 21300126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_64
       rect:
         serializedVersion: 2
         x: 128
@@ -773,7 +1700,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_65
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ddd5ad2897c70f4abf9943908b984fb
+      internalID: 21300128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_65
       rect:
         serializedVersion: 2
         x: 0
@@ -783,7 +1721,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_66
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee29e9dba85ef3549b2c20ed322edb8b
+      internalID: 21300130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_66
       rect:
         serializedVersion: 2
         x: 32
@@ -793,7 +1742,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_67
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af088324b1d78704fbce32d86cebecdf
+      internalID: 21300132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_67
       rect:
         serializedVersion: 2
         x: 64
@@ -803,7 +1763,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_68
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f31081999028374d9d8d6abcf4c98dc
+      internalID: 21300134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_68
       rect:
         serializedVersion: 2
         x: 96
@@ -813,7 +1784,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_69
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22bdc47aebbbc714491d7dd6695a930a
+      internalID: 21300136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_69
       rect:
         serializedVersion: 2
         x: 128
@@ -823,7 +1805,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_70
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04c8dc3244beb8547b30c09c4eb277a7
+      internalID: 21300138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_70
       rect:
         serializedVersion: 2
         x: 0
@@ -833,7 +1826,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_71
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c04f99603a0dba49a3413c8302eae3d
+      internalID: 21300140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_71
       rect:
         serializedVersion: 2
         x: 32
@@ -843,7 +1847,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_72
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ff92d279ac40f54c8d70248ccfcfd74
+      internalID: 21300142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_72
       rect:
         serializedVersion: 2
         x: 64
@@ -853,7 +1868,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_73
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72f78a2e83df30b478f185ca4fe01112
+      internalID: 21300144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_73
       rect:
         serializedVersion: 2
         x: 96
@@ -863,7 +1889,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_74
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21ef879d34a7d8e4280d2c56f059b790
+      internalID: 21300146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_74
       rect:
         serializedVersion: 2
         x: 128
@@ -873,7 +1910,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_75
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb86e099bb5ffbb40ad56d361176a773
+      internalID: 21300148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_75
       rect:
         serializedVersion: 2
         x: 0
@@ -883,7 +1931,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_76
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f62516a7a08fc44d969c997bb86a42b
+      internalID: 21300150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_76
       rect:
         serializedVersion: 2
         x: 32
@@ -893,7 +1952,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_77
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13a4e1837fd86384da4af7fa31a70962
+      internalID: 21300152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_77
       rect:
         serializedVersion: 2
         x: 64
@@ -903,7 +1973,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_78
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e40f6a3946a526247bbc5448e8a1ba7e
+      internalID: 21300154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_78
       rect:
         serializedVersion: 2
         x: 96
@@ -913,7 +1994,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ShipExterior_79
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7258ff2a97c2e741981d5dec13a2803
+      internalID: 21300156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipExterior_79
       rect:
         serializedVersion: 2
         x: 128
@@ -923,5 +2015,29 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f273b88ea83d3a2499dcb0b4ce27fdd2
+      internalID: 21300158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
